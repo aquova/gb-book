@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="500"
+   stroke="black"
+   stroke-width="1"
+   fill="black"
+   font-family="DejaVu Sans,sans-serif"
+   font-stretch="condensed"
+   font-size="33px"
+   version="1.1"
+   id="svg39"
+   sodipodi:docname="01-endianess.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview39"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.93888178"
+     inkscape:cx="431.36422"
+     inkscape:cy="252.42795"
+     inkscape:window-width="1646"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg39" />
+  <defs
+     id="defs20">
+    <rect
+       id="box"
+       x="0"
+       y="-40"
+       width="50"
+       height="50"
+       fill="white" />
+    <g
+       id="x0A">
+      <use
+         xlink:href="#box"
+         id="use1" />
+      <switch
+         id="switch1">
+        <text
+           x="25"
+           y="-3"
+           text-anchor="middle"
+           id="trsvg41"><tspan
+             id="trsvg1">0A</tspan></text>
+      </switch>
+    </g>
+    <g
+       id="x0B">
+      <use
+         xlink:href="#box"
+         id="use2" />
+      <switch
+         id="switch2">
+        <text
+           x="25"
+           y="-3"
+           text-anchor="middle"
+           id="trsvg42"><tspan
+             id="trsvg2">0B</tspan></text>
+      </switch>
+    </g>
+    <g
+       id="x0C">
+      <use
+         xlink:href="#box"
+         id="use3" />
+      <switch
+         id="switch3">
+        <text
+           x="25"
+           y="-3"
+           text-anchor="middle"
+           id="trsvg43"><tspan
+             id="trsvg3">0C</tspan></text>
+      </switch>
+    </g>
+    <g
+       id="x0D">
+      <use
+         xlink:href="#box"
+         id="use4" />
+      <switch
+         id="switch4">
+        <text
+           x="25"
+           y="-3"
+           text-anchor="middle"
+           id="trsvg44"><tspan
+             id="trsvg4">0D</tspan></text>
+      </switch>
+    </g>
+    <g
+       id="thirtytwobit"
+       transform="translate(0 -10)">
+      <rect
+         x="-5"
+         y="10"
+         width="170"
+         height="50"
+         fill="white"
+         id="rect4" />
+      <g
+         text-anchor="middle"
+         transform="translate(10 47)"
+         id="g12">
+        <switch
+           id="switch5">
+          <text
+             id="trsvg45"><tspan
+               id="trsvg5">0</tspan></text>
+        </switch>
+        <switch
+           id="switch6">
+          <text
+             x="20"
+             id="trsvg46"><tspan
+               id="trsvg6">A</tspan></text>
+        </switch>
+        <switch
+           id="switch7">
+          <text
+             x="40"
+             id="trsvg47"><tspan
+               id="trsvg7">0</tspan></text>
+        </switch>
+        <switch
+           id="switch8">
+          <text
+             x="60"
+             id="trsvg48"><tspan
+               id="trsvg8">B</tspan></text>
+        </switch>
+        <switch
+           id="switch9">
+          <text
+             x="80"
+             id="trsvg49"><tspan
+               id="trsvg9">0</tspan></text>
+        </switch>
+        <switch
+           id="switch10">
+          <text
+             x="100"
+             id="trsvg50"><tspan
+               id="trsvg10">C</tspan></text>
+        </switch>
+        <switch
+           id="switch11">
+          <text
+             x="120"
+             id="trsvg51"><tspan
+               id="trsvg11">0</tspan></text>
+        </switch>
+        <switch
+           id="switch12">
+          <text
+             x="140"
+             id="trsvg52"><tspan
+               id="trsvg12">D</tspan></text>
+        </switch>
+      </g>
+      <switch
+         text-anchor="middle"
+         font-size="24px"
+         transform="translate(80 -10)"
+         id="switch13">
+        <text
+           systemLanguage="de"
+           id="trsvg53"><tspan
+             id="trsvg13">Ein 32-bit Integer</tspan></text>
+        <text
+           systemLanguage="fr"
+           id="trsvg54"><tspan
+             id="trsvg14">Registre</tspan></text>
+        <text
+           systemLanguage="hu"
+           id="trsvg55"><tspan
+             id="trsvg15">regiszter</tspan></text>
+        <text
+           systemLanguage="pt"
+           id="trsvg56"><tspan
+             id="trsvg16">Registador (CPU)</tspan></text>
+        <text
+           systemLanguage="ja"
+           id="trsvg57"><tspan
+             id="trsvg17">レジスタ</tspan></text>
+        <text
+           systemLanguage="ru"
+           id="trsvg58-ru"><tspan
+             id="trsvg18-ru">Один 32-битный integer</tspan></text>
+        <text
+           id="trsvg58"><tspan
+             id="trsvg18">one 32-bit integer</tspan></text>
+      </switch>
+    </g>
+    <g
+       id="addresses">
+      <path
+         d="M0 -70 v260"
+         id="path13" />
+      <path
+         d="M25 -60 v240"
+         stroke-dasharray="3.333"
+         id="path14" />
+      <path
+         d="M50 -70 v260"
+         id="path15" />
+      <g
+         font-family="serif"
+         font-stretch="normal"
+         font-size="24px"
+         text-anchor="end"
+         transform="translate(-18 -7)"
+         id="g18">
+        <switch
+           id="switch15">
+          <text
+             y="0"
+             id="trsvg59"><tspan
+               font-style="italic"
+               id="trsvg19">a</tspan><tspan
+               id="trsvg20">:</tspan></text>
+        </switch>
+        <switch
+           id="switch16">
+          <text
+             y="50"
+             id="trsvg60"><tspan
+               font-style="italic"
+               id="trsvg21">a</tspan><tspan
+               id="trsvg22">+1:</tspan></text>
+        </switch>
+        <switch
+           id="switch17">
+          <text
+             y="100"
+             id="trsvg61"><tspan
+               font-style="italic"
+               id="trsvg23">a</tspan><tspan
+               id="trsvg24">+2:</tspan></text>
+        </switch>
+        <switch
+           id="switch18">
+          <text
+             y="150"
+             id="trsvg62"><tspan
+               font-style="italic"
+               id="trsvg25">a</tspan><tspan
+               id="trsvg26">+3:</tspan></text>
+        </switch>
+      </g>
+      <switch
+         text-anchor="middle"
+         font-size="24px"
+         id="switch19">
+        <text
+           systemLanguage="de"
+           transform="translate(25 -150)"
+           id="trsvg63"><tspan
+             id="trsvg27">Abgebildet als</tspan><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg28">vier Bytes</tspan><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg29">im Speicher</tspan></text>
+        <text
+           systemLanguage="fr"
+           transform="translate(25 -100)"
+           id="trsvg64"><tspan
+             id="trsvg30">Mémoire</tspan></text>
+        <text
+           systemLanguage="hu"
+           transform="translate(25 -100)"
+           id="trsvg65"><tspan
+             id="trsvg31">memória</tspan></text>
+        <text
+           systemLanguage="ja"
+           transform="translate(25 -100)"
+           id="trsvg66"><tspan
+             id="trsvg32">メモリ</tspan></text>
+        <text
+           systemLanguage="pt"
+           transform="translate(25 -100)"
+           id="trsvg67"><tspan
+             id="trsvg33">Memória (RAM)</tspan></text>
+        <text
+           systemLanguage="ru"
+           transform="translate(25 -150)"
+           id="trsvg68-ru"><tspan
+             id="trsvg34-ru" /><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg35-ru">4 байта</tspan><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg36-ru">в памяти (RAM)</tspan></text>
+        <text
+           transform="translate(25 -150)"
+           id="trsvg68"><tspan
+             id="trsvg34">arranged as</tspan><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg35">four bytes in</tspan><tspan
+             x="0"
+             dy="1.2em"
+             id="trsvg36">memory</tspan></text>
+      </switch>
+    </g>
+    <polygon
+       id="arrow-pointy-end"
+       points="20 10  0 16  8 10  0 4" />
+    <marker
+       id="marker-arrow-pointy-end"
+       markerWidth="20"
+       markerHeight="160"
+       refX="15"
+       refY="10"
+       orient="auto">
+      <use
+         xlink:href="#arrow-pointy-end"
+         id="use19" />
+      <use
+         xlink:href="#6x6"
+         stroke="grey"
+         id="use20" />
+    </marker>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00157;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect39"
+       width="999.06073"
+       height="496.33508"
+       x="-2.5192017e-07"
+       y="2.1301939" />
+  </g>
+  <g
+     transform="translate(0 0)"
+     id="g30">
+    <g
+       transform="translate(75 100)"
+       id="g29">
+      <use
+         xlink:href="#thirtytwobit"
+         id="use21" />
+      <g
+         transform="translate(300 140)"
+         id="g26">
+        <use
+           xlink:href="#addresses"
+           id="use22" />
+        <use
+           xlink:href="#x0D"
+           transform="translate(0    0)"
+           id="use23" />
+        <use
+           xlink:href="#x0C"
+           transform="translate(0   50)"
+           id="use24" />
+        <use
+           xlink:href="#x0B"
+           transform="translate(0  100)"
+           id="use25" />
+        <use
+           xlink:href="#x0A"
+           transform="translate(0  150)"
+           id="use26" />
+      </g>
+      <path
+         d="M20 50 v225 h210"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path26" />
+      <path
+         d="M60 50 v175 h170"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path27" />
+      <path
+         d="M100 50 v125 h130"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path28" />
+      <path
+         d="M140 50 v75 h90"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path29" />
+    </g>
+    <switch
+       font-size="24px"
+       text-anchor="middle"
+       transform="translate(250 450)"
+       id="switch29">
+      <text
+         systemLanguage="ja"
+         id="trsvg69"><tspan
+           id="trsvg37">リトルエンディアン</tspan></text>
+      <text
+         id="trsvg70"><tspan
+           id="trsvg38">Little-endian</tspan></text>
+    </switch>
+  </g>
+  <g
+     transform="translate(500 0)"
+     id="g39">
+    <g
+       transform="translate(255 100)"
+       id="g38">
+      <use
+         xlink:href="#thirtytwobit"
+         id="use30" />
+      <g
+         transform="translate(-150 140)"
+         id="g35">
+        <use
+           xlink:href="#addresses"
+           id="use31" />
+        <use
+           xlink:href="#x0A"
+           transform="translate(0    0)"
+           id="use32" />
+        <use
+           xlink:href="#x0B"
+           transform="translate(0   50)"
+           id="use33" />
+        <use
+           xlink:href="#x0C"
+           transform="translate(0  100)"
+           id="use34" />
+        <use
+           xlink:href="#x0D"
+           transform="translate(0  150)"
+           id="use35" />
+      </g>
+      <path
+         d="M140 50 v225 h-230"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path35" />
+      <path
+         d="M100 50 v175 h-190"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path36" />
+      <path
+         d="M60 50 v125 h-150"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path37" />
+      <path
+         d="M20 50 v75 h-110"
+         fill="none"
+         marker-end="url(#marker-arrow-pointy-end)"
+         id="path38" />
+    </g>
+    <switch
+       font-size="24px"
+       text-anchor="middle"
+       transform="translate(250 450)"
+       id="switch38">
+      <text
+         systemLanguage="ja"
+         id="trsvg71"><tspan
+           id="trsvg39">ビッグエンディアン</tspan></text>
+      <text
+         id="trsvg72"><tspan
+           id="trsvg40">Big-endian</tspan></text>
+    </switch>
+  </g>
+</svg>

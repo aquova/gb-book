@@ -1,0 +1,24 @@
+[package]
+name = "wasm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gb_core = { path = "../core" }
+js-sys = "0.3.67"
+wasm-bindgen = "0.2.90"
+
+[dependencies.web-sys]
+version = "0.3.67"
+features = [
+    "CanvasRenderingContext2d",
+    "Document",
+    "Element",
+    "HtmlCanvasElement",
+    "ImageData",
+    "KeyboardEvent",
+    "Window",
+]
+
+[lib]
+crate-type = ["cdylib"]

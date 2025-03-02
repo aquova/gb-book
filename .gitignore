@@ -1,0 +1,7 @@
+target
+pkg
+roms
+*.gb
+*.lock
+*.wasm
+**/wasm.js

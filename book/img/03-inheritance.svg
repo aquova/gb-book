@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   contentStyleType="text/css"
+   data-diagram-type="CLASS"
+   height="886px"
+   preserveAspectRatio="none"
+   style="width:640px;height:886px;background:#FFFFFF;"
+   version="1.1"
+   viewBox="0 0 640 886"
+   width="640px"
+   zoomAndPan="magnify"
+   id="svg39"
+   sodipodi:docname="inheritance.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview39"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1489801"
+     inkscape:cx="379.03179"
+     inkscape:cy="460.84348"
+     inkscape:window-width="2560"
+     inkscape:window-height="1382"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker58"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path58" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker57"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path57" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker56"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path56" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker55"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path55" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker54"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path54" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker53"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path53" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker52"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path52" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker51"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path51" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path50" />
+    </marker>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     style="width:640px;height:886px;background:#FFFFFF">
+    <rect
+       style="width:640px;height:886px;background:#FFFFFF;fill:#ffffff;stroke:#000000;stroke-width:3.889;stroke-linejoin:round;stroke-opacity:0"
+       id="rect39"
+       width="639.00769"
+       height="882.9787"
+       x="0.75532824"
+       y="1.5106565" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.91333px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker58)"
+       d="m 470.83222,187.0391 -68.78661,76.85009"
+       id="path40" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.974557px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker51)"
+       d="M 98.735534,303.35896 117.8672,483.91009"
+       id="path41" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.20239px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker57)"
+       d="M 391.1117,382.4667 143.26696,487.02871"
+       id="path42" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.995688px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker56)"
+       d="m 116.15487,525.22095 0.0215,34.59812"
+       id="path43" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.85976px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker55)"
+       d="m 127.45098,501.51738 149.23021,37.0455 21.66919,5.37924"
+       id="path44"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.06399px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker54)"
+       d="M 339.24051,537.9702 469.76206,495.95804"
+       id="path45" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.02297;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker53)"
+       d="m 329.57382,562.31967 -28.7012,138.21594"
+       id="path46" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.28477px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker52)"
+       d="M 333.55758,560.25727 447.38507,701.96888"
+       id="path47" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.948945px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker51)"
+       d="m 326.92402,547.38958 131.36189,1.01688"
+       id="path48" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.979819;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 336.82301,561.10199 118.72704,61.39983"
+       id="path49" />
+  </g>
+  <g
+     class="cluster"
+     data-entity="Desktop"
+     data-uid="ent0036"
+     id="cluster_Desktop"
+     transform="translate(41.543052,-64.958227)">
+    <path
+       d="m 34.5,309.89 h 66.0918 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 110.5 a 2.5,2.5 0 0 1 2.5,2.5 V 394.68 a 2.5,2.5 0 0 1 -2.5,2.5 h -76 a 2.5,2.5 0 0 1 -2.5,-2.5 v -82.29 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path1" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="32"
+       x2="110.0918"
+       y1="332.18689"
+       y2="332.18689"
+       id="line1" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="65.091797"
+       x="36"
+       y="324.8851"
+       id="text1">Desktop</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="HTML"
+     data-uid="ent0037"
+     id="cluster_HTML"
+     transform="translate(288.53538,11.329923)">
+    <path
+       d="m 130.5,6 h 45.1191 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 245.5 a 2.5,2.5 0 0 1 2.5,2.5 V 187.09 a 2.5,2.5 0 0 1 -2.5,2.5 h -115 a 2.5,2.5 0 0 1 -2.5,-2.5 V 8.5 A 2.5,2.5 0 0 1 130.5,6"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path2" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="128"
+       x2="185.11909"
+       y1="28.2969"
+       y2="28.2969"
+       id="line2" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="44.119099"
+       x="132"
+       y="20.9951"
+       id="text2">HTML</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="WASM"
+     data-uid="ent0038"
+     id="cluster_WASM"
+     transform="translate(209.22592,15.861893)">
+    <path
+       d="m 139.5,213.59 h 51.292 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 236.5 a 2.5,2.5 0 0 1 2.5,2.5 V 394.68 a 2.5,2.5 0 0 1 -2.5,2.5 h -97 a 2.5,2.5 0 0 1 -2.5,-2.5 V 216.09 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path3" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="137"
+       x2="200.29201"
+       y1="235.8869"
+       y2="235.8869"
+       id="line3" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="50.292"
+       x="141"
+       y="228.5851"
+       id="text3">WASM</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="Core"
+     data-source-line="25"
+     data-uid="ent0024"
+     id="cluster_Core">
+    <path
+       d="m 8.5,421.18 h 37.292 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 630.5 a 2.5,2.5 0 0 1 2.5,2.5 V 876.87 a 2.5,2.5 0 0 1 -2.5,2.5 H 8.5 A 2.5,2.5 0 0 1 6,876.87 V 423.68 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path4" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="6"
+       x2="55.292"
+       y1="443.4769"
+       y2="443.4769"
+       id="line4" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="36.292"
+       x="10"
+       y="436.17511"
+       id="text4">Core</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="CPU"
+     data-uid="ent0039"
+     id="cluster_CPU"
+     transform="translate(2.8265841,-12.122866)">
+    <path
+       d="m 69.5,464.18 h 32.9033 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 164.5 a 2.5,2.5 0 0 1 2.5,2.5 V 645.28 a 2.5,2.5 0 0 1 -2.5,2.5 h -95 a 2.5,2.5 0 0 1 -2.5,-2.5 v -178.6 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path5" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="67"
+       x2="111.9033"
+       y1="486.4769"
+       y2="486.4769"
+       id="line5" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="31.903299"
+       x="71"
+       y="479.17511"
+       id="text5">CPU</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="Cart"
+     data-uid="ent0040"
+     id="cluster_Cart">
+    <path
+       d="m 256.5,671.78 h 34.3184 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 327.5 a 2.5,2.5 0 0 1 2.5,2.5 V 852.87 a 2.5,2.5 0 0 1 -2.5,2.5 h -71 a 2.5,2.5 0 0 1 -2.5,-2.5 V 674.28 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path6" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="254"
+       x2="300.31839"
+       y1="694.0769"
+       y2="694.0769"
+       id="line6" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="33.318401"
+       x="258"
+       y="686.77509"
+       id="text6">Cart</text>
+  </g>
+  <g
+     class="cluster"
+     data-entity="PPU"
+     data-uid="ent0041"
+     id="cluster_PPU">
+    <path
+       d="m 356.5,671.78 h 32.8896 a 3.75,3.75 0 0 1 2.5,2.5 l 7,19.7969 H 606.5 a 2.5,2.5 0 0 1 2.5,2.5 V 852.87 a 2.5,2.5 0 0 1 -2.5,2.5 h -250 a 2.5,2.5 0 0 1 -2.5,-2.5 V 674.28 a 2.5,2.5 0 0 1 2.5,-2.5"
+       fill="none"
+       style="stroke:#000000;stroke-width:1.5"
+       id="path7" />
+    <line
+       style="stroke:#000000;stroke-width:1.5"
+       x1="354"
+       x2="398.88959"
+       y1="694.0769"
+       y2="694.0769"
+       id="line7" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="31.889601"
+       x="358"
+       y="686.77509"
+       id="text7">PPU</text>
+  </g>
+  <g
+     class="entity"
+     data-entity="Main"
+     data-source-line="1"
+     data-uid="ent0002"
+     id="entity_Main"
+     transform="translate(37.011083,-64.202899)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="47.420898"
+       x="49.290001"
+       y="344.89001"
+       id="rect7" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="33.420898"
+       x="56.290001"
+       y="359.8851"
+       id="text8">Main</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="50.290001"
+       x2="95.710899"
+       y1="365.18689"
+       y2="365.18689"
+       id="line8" />
+  </g>
+  <g
+     class="entity"
+     data-entity="index_html"
+     data-source-line="2"
+     data-uid="ent0003"
+     id="entity_index_html"
+     transform="translate(287.02472,12.84058)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="88.887703"
+       x="143.56"
+       y="41"
+       id="rect8" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="74.887703"
+       x="150.56"
+       y="55.995098"
+       id="text9">index.html</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="144.56"
+       x2="231.44769"
+       y1="61.296902"
+       y2="61.296902"
+       id="line9" />
+  </g>
+  <g
+     class="entity"
+     data-entity="index_js"
+     data-source-line="3"
+     data-uid="ent0004"
+     id="entity_index_js"
+     transform="translate(288.53538,14.351236)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="68.181602"
+       x="153.91"
+       y="137.28999"
+       id="rect9" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="54.181599"
+       x="160.91"
+       y="152.2851"
+       id="text10">index.js</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="154.91"
+       x2="221.0916"
+       y1="157.5869"
+       y2="157.5869"
+       id="line10" />
+  </g>
+  <g
+     class="entity"
+     data-entity="js"
+     data-source-line="4"
+     data-uid="ent0005"
+     id="entity_js"
+     transform="translate(207.71526,19.638534)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="70.594704"
+       x="152.7"
+       y="248.59"
+       id="rect10" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="56.5947"
+       x="159.7"
+       y="263.58511"
+       id="text11">wasm.js</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="153.7"
+       x2="222.29469"
+       y1="268.8869"
+       y2="268.8869"
+       id="line11" />
+  </g>
+  <g
+     class="entity"
+     data-entity="lib"
+     data-source-line="5"
+     data-uid="ent0006"
+     id="entity_lib"
+     transform="translate(211.4919,1.5106564)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="48.166"
+       x="157.92"
+       y="344.89001"
+       id="rect11" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="34.166"
+       x="164.92"
+       y="359.8851"
+       id="text12">lib.rs</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="158.92"
+       x2="205.086"
+       y1="365.18689"
+       y2="365.18689"
+       id="line12" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Bus"
+     data-source-line="9"
+     data-uid="ent0009"
+     id="entity_Bus"
+     transform="translate(117.06034,-66.580786)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="39.7715"
+       x="186.11"
+       y="595.47998"
+       id="rect12" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="25.7715"
+       x="193.11"
+       y="610.4751"
+       id="text13">Bus</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="187.11"
+       x2="224.8815"
+       y1="615.77692"
+       y2="615.77692"
+       id="line13" />
+  </g>
+  <g
+     class="entity"
+     data-entity="IO"
+     data-source-line="10"
+     data-uid="ent0010"
+     id="entity_IO"
+     transform="translate(453.90785,-228.84483)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="29.148399"
+       x="22.43"
+       y="706.78003"
+       id="rect13" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="15.1484"
+       x="29.43"
+       y="721.77509"
+       id="text14">IO</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="23.43"
+       x2="50.5784"
+       y1="727.0769"
+       y2="727.0769"
+       id="line14" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Timer"
+     data-source-line="11"
+     data-uid="ent0011"
+     id="entity_Timer"
+     transform="translate(377.23511,-171.97116)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="54.4482"
+       x="86.779999"
+       y="706.78003"
+       id="rect14" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="40.4482"
+       x="93.779999"
+       y="721.77509"
+       id="text15">Timer</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="87.779999"
+       x2="140.2282"
+       y1="727.0769"
+       y2="727.0769"
+       id="line15" />
+  </g>
+  <g
+     class="entity"
+     data-entity="WRAM"
+     data-source-line="12"
+     data-uid="ent0012"
+     id="entity_WRAM"
+     transform="translate(284.68512,-107.71244)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="59.226601"
+       x="176.39"
+       y="706.78003"
+       id="rect15" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="45.226601"
+       x="183.39"
+       y="721.77509"
+       id="text16">WRAM</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="177.39"
+       x2="234.61659"
+       y1="727.0769"
+       y2="727.0769"
+       id="line16" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Mod"
+     data-source-line="7"
+     data-uid="ent0007"
+     id="entity_Mod"
+     transform="translate(-7.6174559,-9.5118545)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="43.5313"
+       x="101.23"
+       y="499.17999"
+       id="rect16" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="29.5313"
+       x="108.23"
+       y="514.17511"
+       id="text17">Mod</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="102.23"
+       x2="143.76131"
+       y1="519.47693"
+       y2="519.47693"
+       id="line17" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Opcode"
+     data-source-line="8"
+     data-uid="ent0008"
+     id="entity_Opcode"
+     transform="translate(-0.65476595,-29.529608)">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="67.6689"
+       x="83.169998"
+       y="595.47998"
+       id="rect17" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="53.6689"
+       x="90.169998"
+       y="610.4751"
+       id="text18">Opcode</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="84.169998"
+       x2="149.8389"
+       y1="615.77692"
+       y2="615.77692"
+       id="line18" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Mod"
+     data-source-line="13"
+     data-uid="ent0013"
+     id="g19">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="43.5313"
+       x="270.23001"
+       y="706.78003"
+       id="rect18" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="29.5313"
+       x="277.23001"
+       y="721.77509"
+       id="text19">Mod</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="271.23001"
+       x2="312.76129"
+       y1="727.0769"
+       y2="727.0769"
+       id="line19" />
+  </g>
+  <g
+     class="entity"
+     data-entity="RTC"
+     data-source-line="14"
+     data-uid="ent0014"
+     id="entity_RTC">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="42.054699"
+       x="270.97"
+       y="803.07001"
+       id="rect19" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="28.054701"
+       x="277.97"
+       y="818.06512"
+       id="text20">RTC</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="271.97"
+       x2="312.02469"
+       y1="823.36688"
+       y2="823.36688"
+       id="line20" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Mod"
+     data-source-line="15"
+     data-uid="ent0015"
+     id="g21">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="43.5313"
+       x="424.23001"
+       y="706.78003"
+       id="rect20" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="29.5313"
+       x="431.23001"
+       y="721.77509"
+       id="text21">Mod</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="425.23001"
+       x2="466.76129"
+       y1="727.0769"
+       y2="727.0769"
+       id="line21" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Modes"
+     data-source-line="16"
+     data-uid="ent0016"
+     id="entity_Modes">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="59.438499"
+       x="370.28"
+       y="803.07001"
+       id="rect21" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="45.438499"
+       x="377.28"
+       y="818.06512"
+       id="text22">Modes</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="371.28"
+       x2="428.71851"
+       y1="823.36688"
+       y2="823.36688"
+       id="line22" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Sprite"
+     data-source-line="17"
+     data-uid="ent0017"
+     id="entity_Sprite">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="55.5215"
+       x="464.23999"
+       y="803.07001"
+       id="rect22" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="41.5215"
+       x="471.23999"
+       y="818.06512"
+       id="text23">Sprite</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="465.23999"
+       x2="518.76147"
+       y1="823.36688"
+       y2="823.36688"
+       id="line23" />
+  </g>
+  <g
+     class="entity"
+     data-entity="Tile"
+     data-source-line="18"
+     data-uid="ent0018"
+     id="entity_Tile">
+    <rect
+       fill="#f1f1f1"
+       height="36.296902"
+       rx="2.5"
+       ry="2.5"
+       style="stroke:#181818;stroke-width:0.5"
+       width="38.944302"
+       x="554.53003"
+       y="803.07001"
+       id="rect23" />
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="14px"
+       lengthAdjust="spacing"
+       textLength="24.9443"
+       x="561.53003"
+       y="818.06512"
+       id="text24">Tile</text>
+    <line
+       style="stroke:#181818;stroke-width:0.5"
+       x1="555.53003"
+       x2="592.4743"
+       y1="823.36688"
+       y2="823.36688"
+       id="line24" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="index_html"
+     data-entity-2="index_js"
+     data-source-line="21"
+     data-uid="lnk20"
+     id="link_index_html_index_js"
+     transform="translate(284.75874,13.595908)">
+    <path
+       codeLine="21"
+       d="m 188,77.44 c 0,16.91 0,36.52 0,53.5"
+       fill="none"
+       id="index_html-to-index_js"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="184,127.94 188,136.94 192,127.94 188,131.94 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon25" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="index_js"
+     data-entity-2="js"
+     data-source-line="22"
+     data-uid="lnk21"
+     id="link_index_js_js"
+     transform="matrix(1.0344384,0,0,0.53657158,198.97485,211.41887)">
+    <path
+       codeLine="22"
+       d="m 188,174 c 0,20.4 0,47.84 0,68.22"
+       fill="none"
+       id="index_js-to-js"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="188,248.22 192,239.22 188,243.22 184,239.22 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon26" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="Mod"
+     data-entity-2="RTC"
+     data-source-line="29"
+     data-uid="lnk28"
+     id="link_Mod_RTC"
+     transform="matrix(1.0013016,0,0,0.97954396,-0.38006322,15.209074)">
+    <path
+       codeLine="29"
+       d="m 292,743.22 c 0,16.91 0,36.52 0,53.5"
+       fill="none"
+       id="Mod-to-RTC"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="288,793.72 292,802.72 296,793.72 292,797.72 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon32" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="Mod"
+     data-entity-2="Modes"
+     data-source-line="34"
+     data-uid="lnk33"
+     id="link_Mod_Modes">
+    <path
+       codeLine="34"
+       d="m 437.56,743.22 c -8.25,16.91 -18.1102,37.127 -26.3902,54.107"
+       fill="none"
+       id="Mod-to-Modes"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="410.7315,798.2259 408.8894,792.8773 408.54,802.72 416.08,796.3837 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon37" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="Mod"
+     data-entity-2="Sprite"
+     data-source-line="35"
+     data-uid="lnk34"
+     id="link_Mod_Sprite">
+    <path
+       codeLine="35"
+       d="m 454.44,743.22 c 8.25,16.91 18.1102,37.127 26.3902,54.107"
+       fill="none"
+       id="Mod-to-Sprite"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="481.2685,798.2259 475.92,796.3837 483.46,802.72 483.1106,792.8773 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon38" />
+  </g>
+  <g
+     class="link"
+     data-entity-1="Mod"
+     data-entity-2="Tile"
+     data-source-line="36"
+     data-uid="lnk35"
+     id="link_Mod_Tile">
+    <path
+       codeLine="36"
+       d="m 468,742.13 c 24.31,17.91 58.2391,42.9116 81.5491,60.0816"
+       fill="none"
+       id="Mod-to-Tile"
+       style="stroke:#181818;stroke-width:1" />
+    <polygon
+       fill="#181818"
+       points="550.3542,802.8047 544.7614,803.653 554.38,805.77 549.5059,797.2118 "
+       style="stroke:#181818;stroke-width:1"
+       id="polygon39" />
+  </g>
+</svg>
