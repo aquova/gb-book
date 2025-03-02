@@ -1,6 +1,6 @@
 # Chapter IV. CPU Setup
 
-[*Return to Index*](README.md)
+[*Return to Index*](../README.md)
 
 [*Previous Chapter*](03-project-setup.md)
 

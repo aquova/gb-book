@@ -1,6 +1,6 @@
 # Chapter II. Game Boy CPU Specification
 
-[*Return to Index*](README.md)
+[*Return to Index*](../README.md)
 
 [*Previous Chapter*](01-refresher.md)
 

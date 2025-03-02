@@ -1,5 +1,9 @@
 # X. The 0xCB Prefix Table
 
+[*Return to Index*](../README.md)
+
+[*Previous Chapter*](09-stack.md)
+
 Time to answer a big mystery. In the [opcode reference page](https://izik1.github.io/gbops/), there is a second table below the one we've been referencing. What is that second opcode table and how is it used? If the CPU was only limited to a single byte as an index, that would limit the number of possible CPU operations to be 256. This might be fine for some architectures, but the designers of this CPU desired a greater number, and thus added support for a second entire table of 256 more instructions. To switch over to it, they added a special instruction, with index 0xCB, appropriately named `PREFIX CB`. This instruction doesn't do anything by itself, but instead tells the CPU to read another byte, and use that one as the opcode index for the other table. At this point, the CPU will repeat the whole process, but instead using the second table. This means it will fetch another byte, treat that as an index, look at what instruction in the CB table that maps to, and perform its execution accordingly. And yes, this does mean that there are 256 more instructions to explain and implement.
 
 ![Diagram showing the second instruction table](img/10-cb-table.png)

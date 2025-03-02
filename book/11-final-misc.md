@@ -1,5 +1,9 @@
 # XI. Final Misc. Instructions
 
+[*Return to Index*](../README.md)
+
+[*Previous Chapter*](10-cb-prefix.md)
+
 ## A Register Rotation
 
 Time to clean up the final remaining instructions. While we implemented many bitwise rotation instructions in the 0xCB table, there are actually four in the regular table -- 0x07 `RLCA`, 0x0F `RRCA`, 0x17 `RLA`, and 0x1F `RRA`. These operate the same was as the rotate instructions we've implemented previously, with these operating on the A register. This might seem odd, as we already had rotation instructions for the A register in the 0xCB table, and you'd be right, with the one difference being how the Z flag is set. My guess is that these would be the instructions typically used (as they are fewer bytes per instruction), while the entries in the 0xCB table exist to complete the table pattern. In any case, we'll implement them again, taking care to handle the Z flag differently.

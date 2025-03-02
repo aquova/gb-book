@@ -1,5 +1,9 @@
 # VIII. Bitwise Operations
 
+[*Return to Index*](../README.md)
+
+[*Previous Chapter*](07-load-instructions.md)
+
 We discussed how bitwise operators worked in [Chapter I](01-refresher.md), and for the purposes of this section we're going to explore `ADD`, `SUB`, `AND`, `OR`, `XOR`, and `CP`. I won't list out all of their indices, but they largely live in the block between 0x80 and 0xBF, with a few strays here and there. All of the instructions in that block deal with 8-bit values, and share a majority of their traits. We haven't yet discussed `CP` yet though, and it stands for "compare" (not copy). This instruction compares the two specified values, and leaves both alone, but updates some of the flags based on what it found. It's actually simpler to think of the `CP` instructions as subtracting the two values, but discarding the result, which makes items such as the Half-Carry flag have more context.
 
 In that block, there are two types of instructions I haven't mentioned yet though, and those are `ADC` and `SBC`. These are the "add with carry" and "subtract with carry" instructions. These are the first of our instructions to actually use the flags. In this case, `ADC` will add the two values, as the `ADD` command does, but then it will also add the value of the Carry flag. This has some useful applications such as using the overflow from a previous instruction as part of a later calculation. `SBC` uses the carry flag in the same way, but with subtraction.

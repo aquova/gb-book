@@ -1,6 +1,6 @@
 # Chapter III. Project Setup
 
-[*Return to Index*](README.md)
+[*Return to Index*](../README.md)
 
 [*Previous Chapter*](02-cpu-specs.md)
 

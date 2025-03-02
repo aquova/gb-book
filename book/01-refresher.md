@@ -1,6 +1,6 @@
 # Chapter I. A Refresher on Computer Concepts
 
-[*Return to Index*](README.md)
+[*Return to Index*](../README.md)
 
 It's difficult to write a tutorial that is approachable to beginners once you are familiar with a concept. You begin to forget what subjects were difficult to grasp and how unapproachable something can seem from the outside. On the flip side, you don't want to have to explain every minute detail and bore away those who remember the concepts. I hope this guide can strike a balance of both, being approachable to someone without any prior knowledge, while also being interesting to those who do.
 

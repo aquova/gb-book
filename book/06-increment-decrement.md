@@ -1,5 +1,9 @@
 # VI. Increment/Decrement Instructions
 
+[*Return to Index*](../README.md)
+
+[*Previous Chapter*](05-opcode-setup.md)
+
 With the opcode execution framework in place, we now need to turn our attention to understanding the different instructions and what they do, and if possible, determine if there is any commonalities between them that can make our lives easier. First, take another look at the [opcode reference](https://izik1.github.io/gbops/). I talked briefly in the previous chapter about the information contained in each cell, but I now want to talk about the names of each instruction, and what they tell us. This table has each of them listed as they appear in Game Boy assembly language (or one flavor of it anyway), where the name of the instruction comes first, followed by the register the instruction operates upon, if any, followed by a comma and then second register input, if any.
 
 As an example, let's look at opcode 0x04, `INC B`. `INC` here is short for "increment", meaning to add one. This instruction will take the value stored in the B register, and increase it by one. If the value is already maxed out at 0xFF, it would roll over back to 0x00. The flag entry for this instruction is listed as `Z0H-`. This notation will always list the four flags in the order Z, N, H, C; with a 1 indicating it's always set, a 0 for always cleared, a - for left alone, and its own name to indicate it follows its particular behavior. This means that the N flag is always set to 1, regardless of what happened. The Z flag should be set according to how it works, namely if the result is 0 (which only happens if it rolled over from 0xFF to 0x00). The H flag also is set based on its rules -- if a half carry occurred. Finally, the C flag is always left alone.

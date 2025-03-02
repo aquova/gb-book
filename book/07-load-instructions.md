@@ -1,5 +1,9 @@
 # VII. Load Instructions
 
+[*Return to Index*](../README.md)
+
+[*Previous Chapter*](06-increment-decrement.md)
+
 Load instructions are abbreviated as `LD` and they always have two inputs, the destination on the left and the source on the right. The word "load" here is a synonym with "copy", so while the original value in the destination register is overwritten, the value in the source is left alone. You'll sometimes see me using the word "store" instead of load. This is fundamentally the same operation, it's just English semantics to whether we're copying into or out of the register in question, such as storing *to* RAM or loading *from* RAM.
 
 There are *a lot* of different load instructions. The simplest are the ones that make up four entire rows from 0x40 through 0x7F (with the exception of 0x76). These all load a value from one 8-bit register to another, without changing any flags. The large number of possible register pairings requires there to be many different operations in total. Fortunately, this means that we can encompass this entire block with a single helper function.

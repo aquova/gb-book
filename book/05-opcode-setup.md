@@ -1,6 +1,6 @@
 # Chapter V. Opcode Setup
 
-[*Return to Index*](README.md)
+[*Return to Index*](../README.md)
 
 [*Previous Chapter*](04-cpu-setup.md)
 
