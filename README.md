@@ -33,6 +33,10 @@ Other tools aren't required but will greatly assist with debugging. It's recomme
 1. [CPU - The Stack](book/09-stack.md)
 1. [CPU - 0xCB Prefix](book/10-cb-prefix.md)
 1. [CPU - Final Misc. Instructions](book/11-final-misc.md)
+1. [Memory Bus](book/12-memory-bus.md)
+1. [Desktop Frontend Setup](book/13-desktop-setup.md)
+1. [Web Frontend Setup](book/14-wasm-setup.md)
+1. [Cartridge ROM](book/15-cartridge-rom.md)
 
 With more to come!
 
