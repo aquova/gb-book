@@ -37,6 +37,12 @@ Other tools aren't required but will greatly assist with debugging. It's recomme
 1. [Desktop Frontend Setup](book/13-desktop-setup.md)
 1. [Web Frontend Setup](book/14-wasm-setup.md)
 1. [Cartridge ROM](book/15-cartridge-rom.md)
+1. [Video Introduction](book/16-video-introduction.md)
+1. [PPU - Tiles](book/17-tiles.md)
+1. [PPU - Tile Maps and Sets](book/18-tile-maps.md)
+1. [PPU - Modes](book/19-ppu-modes.md)
+1. [Interrupts](book/20-interrupts.md)
+1. [PPU - Control Registers](book/21-control-registers.md)
 
 With more to come!
 

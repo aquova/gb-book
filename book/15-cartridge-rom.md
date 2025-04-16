@@ -140,3 +140,5 @@ impl Bus {
 We'll again use Rust's pattern matching to assist us here. If the system is looking for an address corresponding to Cartridge RAM (0x0000 through 0x7FFF), then forward them along to the `Cart` object. If instead they're looking for a value above that, then offset the Cartridge RAM size and use that address to access the bus's `ram` array. With this, either the `desktop` or `html` projects should be able to read a Game Boy file in and store it into the `Cart` object. Feel free to add some debug statements to ensure that this is indeed the case.
 
 Even with the prospect of bank switching looming over us, we shall be satisfied with what we have for now and move away from the cartridge handling. Instead, we shall implement the final item needed for CPU verification -- basic video rendering.
+
+[*Next Chapter*](16-video-introduction.md)
