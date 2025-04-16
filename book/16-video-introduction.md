@@ -81,4 +81,4 @@ Besides the OAM, the PPU also relies on several addresses in the I/O space. Whil
 
 There's a lot of fine detail in creating a single frame of a Game Boy game, but this should be enough to get us started. The VRAM stores the tile pixel data as well as how they are arranged on the different layers. Elsewhere is the OAM, which contains additional data for the sprites. When it's time to render a frame, the PPU combines the three layers one on top of the other, in addition to information from the control registers, and sends that to the screen to be displayed to the player. This process repeats 60 times per second continuously while the game is running.
 
-[*Next Chapter*](17-tiles.html)
+[*Next Chapter*](17-tiles.md)
