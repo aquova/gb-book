@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="185.4008mm"
+   height="211.40665mm"
+   viewBox="0 0 185.4008 211.40665"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="memory-map.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.73890575"
+     inkscape:cx="409.38915"
+     inkscape:cy="458.10984"
+     inkscape:window-width="2560"
+     inkscape:window-height="1382"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer4"
+     showgrid="false">
+    <inkscape:page
+       x="1.6057159e-16"
+       y="0"
+       width="185.40082"
+       height="211.40665"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 3"
+     transform="translate(0.50000004,0.24680308)">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.78914;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0"
+       id="rect24"
+       width="184.61166"
+       height="210.61751"
+       x="-0.10543001"
+       y="0.14776692"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.2889px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-dasharray:2, 2;stroke-dashoffset:0;paint-order:fill markers stroke"
+       x="82.087479"
+       y="15.279056"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke-width:1"
+         x="82.087479"
+         y="15.279056">VR</tspan></text>
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.50000004,0.24680308)">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="78.491051"
+       height="153.18414"
+       x="59.097202"
+       y="35.777611"
+       ry="2.1289072" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 58.955962,113.33862 H 137.55332"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 58.765762,151.2969 H 137.36312"
+       id="path1-0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 58.955962,61.648134 H 137.55332"
+       id="path2" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 2;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 59.002085,88.606269 H 137.59947"
+       id="path2-1" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.190331"
+       y="50.519749"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="stroke-width:0.264583"
+         x="98.190331"
+         y="50.519749">Tile Block 0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.614365"
+       y="22.277956"
+       id="text2-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="98.614365"
+         y="22.277956">VRAM Memory Map</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.190331"
+       y="76.885315"
+       id="text2-5"><tspan
+         sodipodi:role="line"
+         id="tspan2-9"
+         style="stroke-width:0.264583"
+         x="98.190331"
+         y="76.885315">Tile Block 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.342728"
+       y="103.58879"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.264583"
+         x="98.342728"
+         y="103.58879">Tile Block 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.190331"
+       y="172.51997"
+       id="text2-9"><tspan
+         sodipodi:role="line"
+         id="tspan2-1"
+         style="stroke-width:0.264583"
+         x="98.190331"
+         y="172.51997">Tile Map 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="98.190331"
+       y="133.6591"
+       id="text2-1"><tspan
+         sodipodi:role="line"
+         id="tspan2-5"
+         style="stroke-width:0.264583"
+         x="98.190331"
+         y="133.6591">Tile Map 0</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(0.50000004,0.24680308)">
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.872036"
+       y="38.653015"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="50.872036"
+         y="38.653015">0x8000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.872036"
+       y="63.028553"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="stroke-width:0.264583"
+         x="50.872036"
+         y="63.028553">0x8800</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.872036"
+       y="89.852516"
+       id="text14-6"><tspan
+         sodipodi:role="line"
+         id="tspan14-7"
+         style="stroke-width:0.264583"
+         x="50.872036"
+         y="89.852516">0x9000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.768318"
+       y="114.57116"
+       id="text15"><tspan
+         sodipodi:role="line"
+         id="tspan15"
+         style="stroke-width:0.264583"
+         x="51.318653"
+         y="114.57116">0x9800 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.768318"
+       y="152.30745"
+       id="text15-1"><tspan
+         sodipodi:role="line"
+         id="tspan15-7"
+         style="stroke-width:0.264583"
+         x="51.318653"
+         y="152.30745">0x9C00 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.309471"
+       y="100.86211"
+       id="text16"><tspan
+         sodipodi:role="line"
+         id="tspan16"
+         style="stroke-width:0.264583"
+         x="50.859806"
+         y="100.86211"> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="50.817001"
+       y="189.87242"
+       id="text20"><tspan
+         sodipodi:role="line"
+         id="tspan20"
+         style="stroke-width:0.264583"
+         x="50.817001"
+         y="189.87242">0x9FFF</tspan></text>
+  </g>
+</svg>

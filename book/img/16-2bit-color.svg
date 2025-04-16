@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="104.5538mm"
+   height="104.55378mm"
+   viewBox="0 0 104.5538 104.55378"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-42.675308,-70.16229)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1"
+       width="51.776897"
+       height="51.77689"
+       x="43.175308"
+       y="70.662285" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1-4"
+       width="51.776897"
+       height="51.77689"
+       x="94.952209"
+       y="122.43918" />
+    <rect
+       style="fill:#3f3f3f;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1-48"
+       width="51.776897"
+       height="51.77689"
+       x="43.175312"
+       y="122.43918" />
+    <rect
+       style="fill:#7f7f7f;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="rect1-2"
+       width="51.776897"
+       height="51.77689"
+       x="94.952209"
+       y="70.662285" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.5861px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="57.76355"
+       y="103.61336"
+       id="text1"><tspan
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:1"
+         x="57.76355"
+         y="103.61336">00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.5861px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="57.368443"
+       y="155.39024"
+       id="text1-0"><tspan
+         id="tspan1-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+         x="57.368443"
+         y="155.39024">10</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.5861px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="110.80481"
+       y="155.38037"
+       id="text1-9"><tspan
+         id="tspan1-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-opacity:1"
+         x="110.80481"
+         y="155.38037">11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.5861px;font-family:Hack;-inkscape-font-specification:'Hack, Normal';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       x="111.19992"
+       y="103.61336"
+       id="text1-6"><tspan
+         id="tspan1-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:1"
+         x="111.19992"
+         y="103.61336">01</tspan></text>
+  </g>
+</svg>
