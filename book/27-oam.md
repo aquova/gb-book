@@ -317,4 +317,4 @@ Since `OAM_DMA` is within the LCD register range, we can place it within that bl
 
 With this in place, the emulator now has all the necessary tools to populate the sprite metadata table; all that remains is to actually render the sprite layer.
 
-[*Next Chapter*](27-oam.md)
+[*Next Chapter*](28-sprite-layer.md)
