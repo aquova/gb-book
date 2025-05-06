@@ -43,6 +43,13 @@ Other tools aren't required but will greatly assist with debugging. It's recomme
 1. [PPU - Modes](book/19-ppu-modes.md)
 1. [Interrupts](book/20-interrupts.md)
 1. [PPU - Control Registers](book/21-control-registers.md)
+1. [PPU - Constructing the Background](book/22-constructing-background.md)
+1. [Optional - Creating a Debugger](book/23-debugger.md)
+1. [PPU - Background Viewport](24-background-viewport.md)
+1. [PPU - Window Layer](25-window-layer.md)
+1. [Input](26-input.md)
+1. [PPU - Object Attribute Memory](27-oam.md)
+1. [PPU - Sprite Layer](28-sprite-layer.md)
 
 With more to come!
 
