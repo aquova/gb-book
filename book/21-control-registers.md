@@ -673,3 +673,5 @@ impl Ppu {
 ## 0xFF45 -- DMA Transfer
 
 While this register is assigned a memory address within the other PPU registers, it's actually handled more by the bus, as it signals that a large block memory needs to be transferred from one area to another. This process is a bit complicated, and isn't needed right now, so we'll circle back around it to it later. For now, let's move on to rendering the background.
+
+[*Next Chapter*](22-constructing-background.md)
