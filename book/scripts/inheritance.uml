@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+Desktop.Main --> Core.CPU.Mod
+HTML.index_html --> HTML.index_js
+HTML.index_js --> HTML.WASM.js
+HTML.WASM.js --> HTML.WASM.lib
+HTML.WASM.lib --> Core.CPU.Mod
+package Core {
+CPU.Mod --> CPU.Opcode
+CPU.Mod --> Bus
+Bus --> Cart.Mod
+Cart.Mod --> Cart.RTC
+Bus --> IO
+Bus --> PPU.Mod
+Bus --> Timer
+Bus --> WRAM
+PPU.Mod --> PPU.Modes
+PPU.Mod --> PPU.Sprite
+PPU.Mod --> PPU.Tile
+}
+@enduml

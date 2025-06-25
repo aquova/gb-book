@@ -5,7 +5,7 @@ pub const TIMA: u16     = 0xFF05;
 pub const TMA: u16      = 0xFF06;
 pub const TAC: u16      = 0xFF07;
 
-const TAC_ENABLE_BIT: u8 = 3;
+const TAC_ENABLE_BIT: u8 = 2;
 
 const TIMA_COOLDOWN_OVERFLOW: u8 = 4;
 
@@ -41,9 +41,9 @@ impl Timer {
                 continue;
             }
 
-            let old_bit = self.tima_tick();
+            let old_bit = self.tima_status();
             self.div = self.div.wrapping_add(1);
-            let new_bit = self.tima_tick();
+            let new_bit = self.tima_status();
             let enabled = self.tac.get_bit(TAC_ENABLE_BIT);
 
             if self.tima_cooldown != 0 {
@@ -56,7 +56,6 @@ impl Timer {
                 let (new_tima, overflow) = self.tima.overflowing_add(1);
                 self.tima = new_tima;
                 if overflow {
-                    self.tima = 0;
                     self.tima_cooldown = TIMA_COOLDOWN_OVERFLOW;
                 }
             }
@@ -98,7 +97,7 @@ impl Timer {
         }
     }
 
-    fn tima_tick(&self) -> bool {
+    fn tima_status(&self) -> bool {
         (self.div as u16 & self.get_tima_period()) != 0
     }
 }
