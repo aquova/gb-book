@@ -45,13 +45,21 @@ Other tools aren't required but will greatly assist with debugging. It's recomme
 1. [PPU - Control Registers](book/21-control-registers.md)
 1. [PPU - Constructing the Background](book/22-constructing-background.md)
 1. [Optional - Creating a Debugger](book/23-debugger.md)
-1. [PPU - Background Viewport](24-background-viewport.md)
-1. [PPU - Window Layer](25-window-layer.md)
-1. [Input](26-input.md)
-1. [PPU - Object Attribute Memory](27-oam.md)
-1. [PPU - Sprite Layer](28-sprite-layer.md)
-
-With more to come!
+1. [PPU - Background Viewport](book/24-background-viewport.md)
+1. [PPU - Window Layer](book/25-window-layer.md)
+1. [Input](book/26-input.md)
+1. [PPU - Object Attribute Memory](book/27-oam.md)
+1. [PPU - Sprite Layer](book/28-sprite-layer.md)
+1. [WRAM](book/29-wram.md)
+1. [CPU Timer](book/30-cpu-timer.md)
+1. [Header](book/31-header.md)
+1. [External RAM](book/32-ext-ram.md)
+1. [ROM Banking & MBC1](book/33-mbc1.md)
+1. [MBC2](book/34-mbc2.md)
+1. [MBC3 and the Real Time Clock](book/35-mbc3.md)
+1. [MBC5](book/36-mbc5.md)
+1. [Render by Scanline](book/37-render-scanline.md)
+1. [Battery Saving](book/38-battery-saves.md)
 
 ## Useful References
 
