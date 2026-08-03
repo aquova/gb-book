@@ -254,7 +254,7 @@ impl Cpu {
     pub fn tick(&mut self) -> bool {
         let cycles = if self.halted { 1 } else { opcodes::execute(self) };
         let ppu_result = self.bus.update_ppu(cycles);
-        return ppu_result == LcdResults::RenderFrame;
+        return ppu_result.lcd_result == LcdResults::RenderFrame;
     }
 }
 ```
