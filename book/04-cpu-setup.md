@@ -140,28 +140,28 @@ To begin, let's define getters and setters for the 8-bit register enums. These t
 impl Cpu {
     pub fn get_r8(&self, r: Regs) -> u8 {
         match r {
-            Regs8::A => { self.a },
-            Regs8::B => { self.b },
-            Regs8::C => { self.c },
-            Regs8::D => { self.d },
-            Regs8::E => { self.e },
-            Regs8::F => { self.f },
-            Regs8::H => { self.h },
-            Regs8::L => { self.l },
+            Regs::A => { self.a },
+            Regs::B => { self.b },
+            Regs::C => { self.c },
+            Regs::D => { self.d },
+            Regs::E => { self.e },
+            Regs::F => { self.f },
+            Regs::H => { self.h },
+            Regs::L => { self.l },
         }
     }
 
     pub fn set_r8(&mut self, r: Regs, val: u8) {
         match r {
-            Regs8::A => { self.a = val },
-            Regs8::B => { self.b = val },
-            Regs8::C => { self.c = val },
-            Regs8::D => { self.d = val },
-            Regs8::E => { self.e = val },
+            Regs::A => { self.a = val },
+            Regs::B => { self.b = val },
+            Regs::C => { self.c = val },
+            Regs::D => { self.d = val },
+            Regs::E => { self.e = val },
             // Note: The bottom four bits of F shall always be 0
-            Regs8::F => { self.f = val & 0xF0 },
-            Regs8::H => { self.h = val },
-            Regs8::L => { self.l = val },
+            Regs::F => { self.f = val & 0xF0 },
+            Regs::H => { self.h = val },
+            Regs::L => { self.l = val },
         }
     }
 }
