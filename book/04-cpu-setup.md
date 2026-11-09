@@ -65,16 +65,18 @@ pub struct Cpu {
 
 impl Cpu {
     pub fn new() -> Self {
-        pc: 0x0000,
-        sp: 0x0000,
-        a: 0x00,
-        b: 0x00,
-        c: 0x00,
-        d: 0x00,
-        e: 0x00,
-        f: 0x00,
-        h: 0x00,
-        l: 0x00,
+        Self {
+            pc: 0x0000,
+            sp: 0x0000,
+            a: 0x00,
+            b: 0x00,
+            c: 0x00,
+            d: 0x00,
+            e: 0x00,
+            f: 0x00,
+            h: 0x00,
+            l: 0x00,
+        }
     }
 }
 ```
