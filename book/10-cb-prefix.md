@@ -56,9 +56,9 @@ fn get_cb_reg(op: u8) -> Regs {
         1 => { Regs::C },
         2 => { Regs::D },
         3 => { Regs::E },
-        4 => { Regs::HL },
-        5 => { Regs::H },
-        6 => { Regs::L },
+        4 => { Regs::H },
+        5 => { Regs::L },
+        6 => { Regs::HL },
         7 => { Regs::A },
         _ => unreachable!()
     }
@@ -199,10 +199,10 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
 
     let cb_reg = get_cb_reg(op);
     match op {
-        0x00..=0x07 => { cpu.rotate_left(cb_reg, true); },
-        0x08..=0x0F => { cpu.rotate_right(cb_reg, true); },
-        0x10..=0x17 => { cpu.rotate_left(cb_reg, false); },
-        0x18..=0x1F => { cpu.rotate_right(cb_reg, false); },
+        0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
+        0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
+        0x10..=0x17 => { cpu.rotate_left(cb_reg, true); },
+        0x18..=0x1F => { cpu.rotate_right(cb_reg, true); },
         0x20..=0x27 => { unimplemented!(); },
         0x28..=0x2F => { unimplemented!(); },
         0x30..=0x37 => { unimplemented!(); },
@@ -274,10 +274,10 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
 
     let cb_reg = get_cb_reg(op);
     match op {
-        0x00..=0x07 => { cpu.rotate_left(cb_reg, true); },
-        0x08..=0x0F => { cpu.rotate_right(cb_reg, true); },
-        0x10..=0x17 => { cpu.rotate_left(cb_reg, false); },
-        0x18..=0x1F => { cpu.rotate_right(cb_reg, false); },
+        0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
+        0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
+        0x10..=0x17 => { cpu.rotate_left(cb_reg, true); },
+        0x18..=0x1F => { cpu.rotate_right(cb_reg, true); },
         0x20..=0x27 => { cpu.shift_left(cb_reg); },
         0x28..=0x2F => { cpu.shift_right(cb_reg, true); },
         0x30..=0x37 => { unimplemented!(); },
@@ -392,10 +392,10 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
 
     let cb_reg = get_cb_reg(op);
     match op {
-        0x00..=0x07 => { cpu.rotate_left(cb_reg, true); },
-        0x08..=0x0F => { cpu.rotate_right(cb_reg, true); },
-        0x10..=0x17 => { cpu.rotate_left(cb_reg, false); },
-        0x18..=0x1F => { cpu.rotate_right(cb_reg, false); },
+        0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
+        0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
+        0x10..=0x17 => { cpu.rotate_left(cb_reg, true); },
+        0x18..=0x1F => { cpu.rotate_right(cb_reg, true); },
         0x20..=0x27 => { cpu.shift_left(cb_reg); },
         0x28..=0x2F => { cpu.shift_right(cb_reg, true); },
         0x30..=0x37 => { cpu.swap_bits(cb_reg); },

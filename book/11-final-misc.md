@@ -14,7 +14,7 @@ Time to clean up the final remaining instructions. While we implemented many bit
 // RLCA
 // 000C
 fn rlca_07(cpu: &mut Cpu) -> u8 {
-    cpu.rotate_left(Regs::A, true);
+    cpu.rotate_left(Regs::A, false);
     cpu.set_flag(Flags::Z, false);
     1
 }
@@ -22,7 +22,7 @@ fn rlca_07(cpu: &mut Cpu) -> u8 {
 // RRCA
 // 000C
 fn rrca_0f(cpu: &mut Cpu) -> u8 {
-    cpu.rotate_right(Regs::A, true);
+    cpu.rotate_right(Regs::A, false);
     cpu.set_flag(Flags::Z, false);
     1
 }
@@ -30,7 +30,7 @@ fn rrca_0f(cpu: &mut Cpu) -> u8 {
 // RLA
 // 000C
 fn rla_17(cpu: &mut Cpu) -> u8 {
-    cpu.rotate_left(Regs::A, false);
+    cpu.rotate_left(Regs::A, true);
     cpu.set_flag(Flags::Z, false);
     1
 }
@@ -38,7 +38,7 @@ fn rla_17(cpu: &mut Cpu) -> u8 {
 // RRA
 // 000C
 fn rra_1f(cpu: &mut Cpu) -> u8 {
-    cpu.rotate_right(Regs::A, false);
+    cpu.rotate_right(Regs::A, true);
     cpu.set_flag(Flags::Z, false);
     1
 }
@@ -56,7 +56,7 @@ Next, there are a pair of instructions that modifies the C flag. Up until now, t
 fn scf_37(cpu: &mut Cpu) -> u8 {
     cpu.set_flag(Flags::N, false);
     cpu.set_flag(Flags::H, false);
-    cpu.set_flag(Flags::C, false);
+    cpu.set_flag(Flags::C, true);
     1
 }
 
@@ -137,14 +137,14 @@ fn reti_d9(cpu: &mut Cpu) -> u8 {
 // ----
 fn di_f3(cpu: &mut Cpu) -> u8 {
     cpu.set_irq(false);
-    4
+    1
 }
 
 // EI
 // ----
 fn ei_fb(cpu: &mut Cpu) -> u8 {
     cpu.set_irq(true);
-    4
+    1
 }
 ```
 

@@ -81,7 +81,7 @@ pub fn check_h_borrow_u8(lhs: u8, rhs: u8) -> bool {
 }
 
 pub fn check_h_borrow_u16(lhs: u16, rhs: u16) -> bool {
-    (lhs & 0xF).checked_sub(rhs & 0xF).is_none()
+    (lhs & 0xFFF).checked_sub(rhs & 0xFFF).is_none()
 }
 
 pub fn check_c_carry_u8(lhs: u8, rhs: u8) -> bool {

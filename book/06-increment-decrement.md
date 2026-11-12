@@ -201,7 +201,7 @@ fn dec_05(cpu: &mut Cpu) -> u8 {
 // ----
 fn dec_3b(cpu: &mut Cpu) -> u8 {
     cpu.dec_r16(Regs16::SP);
-    1
+    2
 }
 
 // Etc...

@@ -290,7 +290,7 @@ impl Ppu {
                         continue;
                     }
                     let screen_x = x + coords.0;
-                    if screen_x &gt; 0 || screen_x &gt;= SCREEN_WIDTH as isize {
+                    if screen_x &lt; 0 || screen_x &gt;= SCREEN_WIDTH as isize {
                         continue;
                     }
                     let buffer_idx = 4 * (screen_x as usize);

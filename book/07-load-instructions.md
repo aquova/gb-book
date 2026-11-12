@@ -157,7 +157,7 @@ fn ld_e0(cpu: &mut Cpu) -> u8 {
     let addr = 0xFF00 + offset;
     let val = cpu.get_r8(Regs::A);
     cpu.write_ram(addr, val);
-    2
+    3
 }
 ```
 

@@ -166,18 +166,18 @@ Sadly, there is one instruction that doesn't match the pattern of any of our hel
 // ADD SP, i8
 // 00HC
 fn add_e8(cpu: &mut Cpu) -> u8 {
-    let val = cpu.fetch() as i8 as u16;
+    let val = cpu.fetch() as i8 as i16 as u16;
     let sp = cpu.get_r16(Regs16::SP);
     let res = sp.wrapping_add(val);
-    let set_c = check_c_carry_u16(sp, val);
-    let set_h = check_h_carry_u16(sp, val);
+    let set_c = check_c_carry_u8(sp.low_byte(), val.low_byte());
+    let set_h = check_h_carry_u8(sp.low_byte(), val.low_byte());
 
     cpu.set_r16(Regs16::SP, res);
     cpu.set_flag(Flags::Z, false);
     cpu.set_flag(Flags::N, false);
     cpu.set_flag(Flags::H, set_h);
     cpu.set_flag(Flags::C, set_c);
-    2
+    4
 }
 ```
 

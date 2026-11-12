@@ -39,7 +39,7 @@ It's important to note that the SP points *at* the top value on the stack. Thus 
 fn pop_c1(cpu: &mut Cpu) -> u8 {
     let val = cpu.pop();
     cpu.set_r16(Regs16::BC, val);
-    1
+    3
 }
 ```
 
