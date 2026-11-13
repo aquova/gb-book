@@ -254,7 +254,7 @@ We will of course need to render 16 rows worth of sprite pixels when in this mod
 // Unchanged code omitted
 
 impl Ppu {
-    fn render_sprites(&amp;self, buffer: &amp;mut [u8]) {
+    fn render_sprites(&self, buffer: &mut [u8]) {
         let sprites = self.sort_sprites();
         let bg_palette = self.get_bg_palette();
         let is_8x16 = self.are_sprites_8x16();
@@ -266,8 +266,8 @@ impl Ppu {
             for y in 0..height {
                 let y_flipped = spr.is_y_flipped();
                 let spr_idx = if is_8x16 {
-                    if (y &lt; 8 &amp;&amp; !y_flipped) || (8 &lt; y &amp;&amp; y_flipped) {
-                        spr.get_tile_num() &amp; 0xFE
+                    if (y < 8 && !y_flipped) || (8 < y && y_flipped) {
+                        spr.get_tile_num() & 0xFE
                     } else {
                         spr.get_tile_num() | 0x01
                     }
@@ -276,7 +276,7 @@ impl Ppu {
                 };
                 let tile = self.tiles[spr_idx as usize];
                 let screen_y = y + coords.1;
-                if screen_y &lt; 0 || screen_y &gt;= SCREEN_HEIGHT as isize {
+                if screen_y < 0 || screen_y >= SCREEN_HEIGHT as isize {
                     continue;
                 }
                 let mut data_y = if y_flipped { height - y - 1 } else { y };
@@ -290,13 +290,13 @@ impl Ppu {
                         continue;
                     }
                     let screen_x = x + coords.0;
-                    if screen_x &lt; 0 || screen_x &gt;= SCREEN_WIDTH as isize {
+                    if screen_x < 0 || screen_x >= SCREEN_WIDTH as isize {
                         continue;
                     }
                     let buffer_idx = 4 * (screen_x as usize);
-                    let current_rgba = &amp;buffer[buffer_idx..(buffer_idx + 4)];
+                    let current_rgba = &buffer[buffer_idx..(buffer_idx + 4)];
                     // If current RGBA value isn't the transparent color, continue
-                    if behind_bg &amp;&amp; current_rgba != GB_PALETTE[bg_palette[0] as usize] {
+                    if behind_bg && current_rgba != GB_PALETTE[bg_palette[0] as usize] {
                         continue;
                     }
                     let color_idx = palette[cell as usize];
@@ -311,4 +311,4 @@ impl Ppu {
 }
 ```
 
-With that, we now support all three layers of Game Boy rendering &mdash; the Background, Window, and Sprite layers. For games we support, we can actually engage in real gameplay. However, that list of games is rather small, as we still only support the smallest categories of games. We'll remedy that soon, but first we have a few other items to take care of.
+With that, we now support all three layers of Game Boy rendering -- the Background, Window, and Sprite layers. For games we support, we can actually engage in real gameplay. However, that list of games is rather small, as we still only support the smallest categories of games. We'll remedy that soon, but first we have a few other items to take care of.

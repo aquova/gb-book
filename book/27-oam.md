@@ -4,7 +4,7 @@
 
 [*Previous Chapter*](26-input.md)
 
-With the background and window layers supported, there is only one remaining &mdash; the sprite layer. While some aspects of the sprites work in a similar fashion to the other two layers, such as using the same tiles, the free movement of the sprites requires other mechanics. The additional data needed for the sprites, such as their coordinate position, whether or not they're flipped, and which tile to use, is stored in an area known as *Object Attribute Memory*.
+With the background and window layers supported, there is only one remaining -- the sprite layer. While some aspects of the sprites work in a similar fashion to the other two layers, such as using the same tiles, the free movement of the sprites requires other mechanics. The additional data needed for the sprites, such as their coordinate position, whether or not they're flipped, and which tile to use, is stored in an area known as *Object Attribute Memory*.
 
 The OAM lies in RAM between 0xFE00 through 0xFE9F. This is 160 bytes which allows 40 sprites to have four bytes each of metadata. These are assigned the following roles.
 
