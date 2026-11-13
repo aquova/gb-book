@@ -2,7 +2,7 @@
 
 [*Return to Index*](../README.md)
 
-[*Previous Chapter*](09-stack.md)
+[*Previous Chapter*](08-basic-instructions.md)
 
 The stack is a special area of RAM used for "pushing" and "popping" 16-bit values, either manually or as part of other instructions. It's useful for instances where the developer needs to store data without caring about its memory location, only that it's saved temporarily. The name "stack" is apt, and you can think of it like a stack of objects, where the user can only access the item on the very top. The stack obeys a principle often referred to as "First In, Last Out" (FIFO). So if you have a stack of five items and want the fourth one down, you'll need to pop off the top three before it can be popped itself. Some systems have the ability to "peek" at items on the stack without removing them, but the Game Boy doesn't offer that instruction<sup>1</sup>.
 

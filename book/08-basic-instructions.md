@@ -1,18 +1,18 @@
-# VIII. Bitwise Operations
+# VIII. Basic Operations
 
 [*Return to Index*](../README.md)
 
 [*Previous Chapter*](07-load-instructions.md)
 
-We discussed how bitwise operators worked in [Chapter I](01-refresher.md), and for the purposes of this section we're going to explore `ADD`, `SUB`, `AND`, `OR`, `XOR`, and `CP`. I won't list out all of their indices, but they largely live in the block between 0x80 and 0xBF, with a few strays here and there. All of the instructions in that block deal with 8-bit values, and share a majority of their traits. We haven't yet discussed `CP` yet though, and it stands for "compare" (not copy). This instruction compares the two specified values, and leaves both alone, but updates some of the flags based on what it found. It's actually simpler to think of the `CP` instructions as subtracting the two values, but discarding the result, which makes items such as the Half-Carry flag have more context.
+We discussed how bitwise and arithmetic operators worked in [Chapter I](01-refresher.md), and for the purposes of this section we're going to explore `ADD`, `SUB`, `AND`, `OR`, `XOR`, and `CP`. I won't list out all of their indices, but they largely live in the block between 0x80 and 0xBF, with a few strays here and there. All of the instructions in that block deal with 8-bit values, and share a majority of their traits. We haven't yet discussed `CP` yet though, and it stands for "compare" (not copy). This instruction compares the two specified values, and leaves both alone, but updates some of the flags based on what it found. It's actually simpler to think of the `CP` instructions as subtracting the two values, but discarding the result, which makes items such as the Half-Carry flag have more context.
 
 In that block, there are two types of instructions I haven't mentioned yet though, and those are `ADC` and `SBC`. These are the "add with carry" and "subtract with carry" instructions. These are the first of our instructions to actually use the flags. In this case, `ADC` will add the two values, as the `ADD` command does, but then it will also add the value of the Carry flag. This has some useful applications such as using the overflow from a previous instruction as part of a later calculation. `SBC` uses the carry flag in the same way, but with subtraction.
 
-There are a few bitwise operators outside of this block, but they follow a similar pattern to other commands we've seen before. 0xC6, `ADD A, u8` adds an immediate value into the A register, and other bitwise operators in the bottom quarter of the chart do a similar maneuver. Finally there is 0xE8, `ADD SP, i8`, which is similar to 0xC6, but treats its immediate value as a signed integer, and adds it to the SP register. We'll cover that in more detail in a moment.
+There are a few operators outside of this block, but they follow a similar pattern to other commands we've seen before. 0xC6, `ADD A, u8` adds an immediate value into the A register, and other operators in the bottom quarter of the chart do a similar maneuver. Finally there is 0xE8, `ADD SP, i8`, which is similar to 0xC6, but treats its immediate value as a signed integer, and adds it to the SP register. We'll cover that in more detail in a moment.
 
 ## 8-bit Helpers
 
-By this point in development, you should be well versed in how to handle 8-bit versus 16-bit operations, so these shouldn't pose too much of a challenge. Due to the large amount of repetition, we will again create some helper functions in our `Cpu` object to reduce the amount of code duplication. While there were load instructions for every combination of 8-bit registers, the majority of the 8-bit bitwise operations use the A register as an input and as the output. We'll create helpers that take an 8-bit value and apply it to the value stored in the A register. For example, a helper function for the `AND` instructions will look something like so.
+By this point in development, you should be well versed in how to handle 8-bit versus 16-bit operations, so these shouldn't pose too much of a challenge. Due to the large amount of repetition, we will again create some helper functions in our `Cpu` object to reduce the amount of code duplication. While there were load instructions for every combination of 8-bit registers, the majority of the 8-bit operations use the A register as an input and as the output. We'll create helpers that take an 8-bit value and apply it to the value stored in the A register. For example, a helper function for the `AND` instructions will look something like so.
 
 ```rust
 // In cpu/mod.rs
@@ -103,7 +103,7 @@ pub fn cp_a_u8(&mut self, val: u8) {
 }
 ```
 
-With this, we've covered all of the 8-bit bitwise helpers, which are used by nearly all of the instructions. There is one final category, however, and those are the 16-bit `ADD` instructions, of which there are four. These add a value in one 16-bit register to another, so we can create a helper function that does just that.
+With this, we've covered all of the 8-bit helpers, which are used by nearly all of the instructions. There is one final category, however, and those are the 16-bit `ADD` instructions, of which there are four. These add a value in one 16-bit register to another, so we can create a helper function that does just that.
 
 ```rust
 // In cpu/mod.rs
@@ -181,7 +181,7 @@ fn add_e8(cpu: &mut Cpu) -> u8 {
 }
 ```
 
-This function strongly resembles `add_r16`, but rather than reading from a source register, the system will first fetch a value. This value needs to be treated as a signed value (and then cast into a `u16` so the Rust compiler will allow addition with other `u16`). This is the only exception however, and once you have all of the bitwise operations in place, the new updated `OPCODES` array should look something like this.
+This function strongly resembles `add_r16`, but rather than reading from a source register, the system will first fetch a value. This value needs to be treated as a signed value (and then cast into a `u16` so the Rust compiler will allow addition with other `u16`). This is the only exception however, and once you have all of the operations in place, the new updated `OPCODES` array should look something like this.
 
 ```rust
 const OPCODES: [fn(&mut Cpu) -> u8; 256] = [

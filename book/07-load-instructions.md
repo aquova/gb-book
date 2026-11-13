@@ -18,13 +18,13 @@ Like the Increment/Decrement instructions before, there are some different load 
 
 The top four instructions of the 0x2 and 0xA columns.
 
-The two columns of 0x01 and 0x0E do something we haven't seen before, which is to use "immediate" values. Rather than load a value to or from a register, these fetch the next 8-bit or 16-bit value from RAM and load that into the corresponding register. I use the term "fetch" in the same sense we implemented it the `fetch` function; reading the data pointed to by the PC, and incrementing it after. For the 16-bit loads, that means fetching twice and combining the two bytes into a single value (via `fetch_u16`).
+The three columns of 0x01, 0x06, and 0x0E do something we haven't seen before, which is to use "immediate" values. Rather than load a value to or from a register, these fetch the next 8-bit or 16-bit value from RAM and load that into the corresponding register. I use the term "fetch" in the same sense we implemented it the `fetch` function; reading the data pointed to by the PC, and incrementing it after. For the 16-bit loads, that means fetching twice and combining the two bytes into a single value (via `fetch_u16`).
 
 ![Image showing the two columns handling immediate loads](img/07-ld-1E-columns.png)
 
 The top four instructions of the 0x1 and 0xE columns.
 
-There is a final lone load instruction near the top of the chart, 0x08 `LD (u16), SP`. This instruction has several steps, fetching the next 16-bit value from the PC, treating that as a RAM memory address, and storing the value into the SP register (which, don't forget, is a 16-bit value).
+There is a final lone load instruction near the top of the chart, 0x08 `LD (u16), SP`. This instruction has several steps, fetching the next 16-bit value from the PC, treating that as a RAM memory address, and storing the value in SP (which, don't forget, is a 16-bit value) into that memory address.
 
 ![Image showing the LD (u16), SP instruction](img/07-ld-0x08.png)
 
@@ -127,7 +127,7 @@ fn ld_08(cpu: &mut Cpu) -> u8 {
 }
 ```
 
-In addition to the immediate 16-bit loads, there are some 16-bit instructions that not only save their value to a RAM address, but also increment the address when they're done, such as 0x2A `LD A, (HL+)`.
+In addition to the immediate 16-bit loads, there are some instructions that not only load their value from a RAM address, but also increment the address when they're done, such as 0x2A `LD A, (HL+)`.
 
 ```rust
 // In cpu/opcodes.rs
@@ -207,4 +207,4 @@ const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
 ];
 ```
 
-[*Next Chapter*](08-bitwise-instructions.md)
+[*Next Chapter*](08-basic-instructions.md)
