@@ -146,7 +146,7 @@ impl Timer {
 }
 ```
 
-As I mentioned above, this is one of the rare cases where we're going to be operating on a T-Cycle basis. We'll pass in the M-Cycle value as an input, but multiply it by four to get the T-Cycle count. This means that for every call of the `tick` function, the counter will increase four times for every M-Cycle that passes.
+As I mentioned above, the timer needs to operate on a T-Cycle basis. Just as we did for the PPU modes, we'll pass in the M-Cycle value as an input, but multiply it by four to get the T-Cycle count. This means that for every call of the `tick` function, the counter will increase four times for every M-Cycle that passes.
 
 Let's now describe now what happens to each of the four registers. `DIV` is the easiest to understand. Now that the `counter` has overflowed, it simply increases by one, although we need to take care to allow it to wrap around if it too needs to overflow. `TMA` and `TAC` too are fairly simple to implement, as they don't increase alongside the counter. Instead, they simply hold values that will be used when calculating the advance of the fourth, and most complicated, register -- `TIMA`.
 
@@ -156,10 +156,10 @@ Let's put `TIMA` aside for now and focus just on `TAC`. It's understandable that
 
 | Bits 0-1 | T-Cycles per TIMA tick |
 | -------- | ---------------------- |
-| 0b00 | 1024 |
-| 0b01 | 16 |
-| 0b10 | 64 |
-| 0b11 | 256 |
+|   0b00   |         1024           |
+|   0b01   |          16            |
+|   0b10   |          64            |
+|   0b11   |         256            |
 
 Let's create two new functions. The first will be to implement the table above, giving us what the current `TIMA` period should be, based on the value currently stored in `TAC`. The second function will be to use the first, masking the appropriate bit from `DIV` to see if it's time for `TIMA` to increment. We'll discuss how that process works in a moment.
 

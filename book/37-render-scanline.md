@@ -268,8 +268,8 @@ We now need to return from our `step` function anytime the system has a line's w
 // Unchanged code omitted
 
 impl Lcd {
-    pub fn step(&mut self, cycles: u8) -> LcdResults {
-        self.cycles += cycles as usize;
+    pub fn step(&mut self, m_cycles: u8) -> LcdResults {
+        self.cycles += 4 * m_cycles as usize;
         let mut result = LcdResults::NoAction;
 
         match self.mode {

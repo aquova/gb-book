@@ -10,7 +10,7 @@ That is a big hint to the solution to this problem. The PPU needs to operate on 
 
 The CPU uses this clock to pace itself when it is performing operations, in fact the CPU can *only* execute when the clock "ticks", or changes from off to on, to ensure synchronization between all its parts. The number of cycles each instruction takes is in terms of the CPU clock, where the more complicated the instruction, the more cycles the CPU needs to take before it is finished. It's important to note that even simple instructions might require more than one clock cycle. In fact, the `NOP` instruction, which does nothing, actually takes four clock cycles. This should sound very familiar by this point, as all of those mysterious values we returned from every CPU opcode are how many cycles each of those instructions takes. It's finally time for use to put those cycle counts to use.
 
-Every "machine cycle" is actually a multiple of four "clock cycles", and you'll sometimes see the opcode table have all its values as a multiple of four to account for this. For our introductory emulator, we've been using M-cycles to keep things simple. To achieve superb accuracy, this distinction does need to be taken into account, but that's beyond the scope of this tutorial. I mention it simply in case you run into an opcode diagram with different values than the one we've been using.
+Every "machine cycle" (M-cycle) is actually a multiple of four "clock cycles" (T-cycle), and you'll sometimes see the opcode table have all its values as a multiple of four to account for this. For our introductory emulator, we've been using M-cycles to keep things simple, although we'll need to convert them to T-cycles when we update the PPU. To achieve superb accuracy, this distinction does need to be taken into account, but that's beyond the scope of this tutorial. I mention it simply in case you run into an opcode diagram with different values than the one we've been using.
 
 ## History Lesson: How an old CRT Television Works
 
@@ -110,7 +110,7 @@ impl Lcd {
 
 At the beginning of this machine, we are in the HBlank state at the top left of the screen, so at line zero, and with zero cycles elapsed. Next comes the state machine step function. Let's go over what each of these modes does in more clearly, and what this function should do over all.
 
-This function will accept the elapsed CPU cycle count from the previous instruction, which will inform the state machine how much time has elapsed. By default, the modes remain in their current state unless the total cycle count since they've started surpasses their allowed length, which we defined in the four constant values.
+This function will accept the elapsed CPU cycle count from the previous instruction, which will inform the state machine how much time has elapsed. There is one catch here. Our CPU instructions return their length in M-cycles, but the PPU mode lengths listed above (and in most references) are measured in T-cycles. Since every M-cycle is four T-cycles, we'll multiply the incoming value by four before adding it to our running total. Forgetting to do this would cause our PPU to run four times slower than the CPU. By default, the modes remain in their current state unless the total cycle count since they've started surpasses their allowed length, which we defined in the four constant values.
 
 Most of the modes always default to the same subsequent one; such as VBlank, which begins the first scanline's OAM Read when it's done, OAM Read, which begins drawing the scanline (VRAM Read mode) once it's finished, and VRAM Read, which transitions into HBlank. HBlank will typically switch to the next line's OAM Read, unless it's at the bottom of the screen, at which point we need to move back up to the top via VBlank. Here's the state machine flowchart again to illustrate these relationships.
 
@@ -134,8 +134,8 @@ pub enum LcdResults {
 
 
 impl Lcd {
-    pub fn step(&mut self, cycles: u8) -> LcdResults {
-        self.cycles += cycles as usize;
+    pub fn step(&mut self, m_cycles: u8) -> LcdResults {
+        self.cycles += 4 * m_cycles as usize;
         let mut result = LcdResults::NoAction;
 
         match self.mode {

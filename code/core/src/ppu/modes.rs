@@ -55,8 +55,8 @@ impl Lcd {
         self.mode
     }
 
-    pub fn step(&mut self, cycles: u8) -> LcdResults {
-        self.cycles += cycles as usize;
+    pub fn step(&mut self, m_cycles: u8) -> LcdResults {
+        self.cycles += 4 * m_cycles as usize;
         let mut result = LcdResults::NoAction;
 
         match self.mode {
