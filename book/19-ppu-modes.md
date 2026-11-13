@@ -145,7 +145,7 @@ impl Lcd {
                     self.line += 1;
 
                     // If we've finished line 143, we've finished a frame, time for VBLANK
-                    if self.line == VBLANK_LINE {
+                    if self.line == VBLANK_LINE_START {
                         self.mode = LcdModeType::VBLANK;
                         result = LcdResults::RenderFrame;
                     } else {
