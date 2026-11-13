@@ -22,7 +22,7 @@ pub enum Flags {
     C,
 }
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Regs {
     A,
     B,

@@ -215,7 +215,7 @@ We need to finish up with the modified versions for `INC (HL)` and `DEC (HL)`. T
 // In cpu/mod.rs
 // Unchanged code omitted
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Regs {
     A,
     B,

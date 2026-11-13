@@ -93,7 +93,7 @@ Next, we'll define some enumerations with elements corresponding to each of the 
 // In cpu/mod.rs
 // Unchanged code omitted
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Regs {
     A,
     B,
@@ -115,7 +115,7 @@ pub enum Regs16 {
 }
 ```
 
-Since some operations want the 8-bit versions and others the 16-bit pairs, we'll create enum values for every combination, which will be used in different versions of the functions. This includes the Stack Pointer, as while it isn't one of the paired registers, it can still be read and written to, and it will make some functions cleaner down the road by having it as an option. I'll also save you the trouble and tell you that these will need the `Copy` and `Clone` traits down the line.
+Since some operations want the 8-bit versions and others the 16-bit pairs, we'll create enum values for every combination, which will be used in different versions of the functions. This includes the Stack Pointer, as while it isn't one of the paired registers, it can still be read and written to, and it will make some functions cleaner down the road by having it as an option. I'll also save you the trouble and tell you that these will need the `Copy`, `Clone`, and `PartialEq` traits down the line.
 
 While we're at it, lets also make an enum for the flag values.
 

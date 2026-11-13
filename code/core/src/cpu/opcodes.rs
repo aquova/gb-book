@@ -2126,6 +2126,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
     // 0xC0-0xFF -> SET
 
     let cb_reg = get_cb_reg(op);
+    let mut ret = if cb_reg == Regs::HL { 4 } else { 2 };
     match op {
         0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
         0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
@@ -2138,6 +2139,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
         0x40..=0x7F => {
             let bit = (op & 0b111000) >> 3;
             cpu.test_bit(cb_reg, bit);
+            if cb_reg == Regs::HL { ret = 3; }
         },
         0x80..=0xBF => {
             let bit = (op & 0b111000) >> 3;
@@ -2148,5 +2150,5 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
             cpu.write_bit(cb_reg, bit, true);
         },
     }
-    2
+    ret
 }

@@ -45,7 +45,9 @@ Let's begin by identifying these patterns. If you look at the 0xCB table, you'll
 | RES              | 0x80-0xBF |
 | SET              | 0xC0-0xFF |
 
-We can conveniently use these ranges to decode which instruction -- and thus which helper function -- we need to use. It doesn't end here though, the columns of the table also follow a strict pattern. There are eight 8-bit register inputs (A, B, C, D, E, H, L and (HL)) that always appear in the same order in the table, meaning that by looking at just the last three bits, we can determine what the input of the instruction will be. In fact, let's start with that function; where we take the opcode index and extract the register in question.
+We can conveniently use these ranges to decode which instruction -- and thus which helper function -- we need to use. It doesn't end here though, the columns of the table also follow a strict pattern. There are eight 8-bit register inputs (A, B, C, D, E, H, L and (HL)) that always appear in the same order in the table, meaning that by looking at just the last three bits, we can determine what the input of the instruction will be. The output also follows a similar pattern, with most of the instructions always using two cycles, with only the (HL) access instructions using more.
+
+Let's start with that function; where we take the opcode index and extract the register in question. While there are edge cases, we will begin by returning four cycles for (HL) instructions, and two cycles otherwise.
 
 ```rust
 // In cpu/opcodes.rs
@@ -78,6 +80,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
     // 0xC0-0xFF -> SET
 
     let cb_reg = get_cb_reg(op);
+    let ret = if cb_reg == Regs::HL { 4 } else { 2 };
     match op {
         0x00..=0x07 => { unimplemented!(); },
         0x08..=0x0F => { unimplemented!(); },
@@ -91,7 +94,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
         0x80..=0xBF => { unimplemented!(); },
         0xC0..=0xFF => { unimplemented!(); },
     }
-    2
+    ret
 }
 ```
 
@@ -198,6 +201,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
     // 0xC0-0xFF -> SET
 
     let cb_reg = get_cb_reg(op);
+    let ret = if cb_reg == Regs::HL { 4 } else { 2 };
     match op {
         0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
         0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
@@ -211,7 +215,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
         0x80..=0xBF => { unimplemented!(); },
         0xC0..=0xFF => { unimplemented!(); },
     }
-    2
+    ret
 }
 ```
 
@@ -273,6 +277,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
     // 0xC0-0xFF -> SET
 
     let cb_reg = get_cb_reg(op);
+    let ret = if cb_reg == Regs::HL { 4 } else { 2 };
     match op {
         0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
         0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
@@ -286,7 +291,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
         0x80..=0xBF => { unimplemented!(); },
         0xC0..=0xFF => { unimplemented!(); },
     }
-    2
+    ret
 }
 ```
 
@@ -374,6 +379,8 @@ We're looking for the subset of bits in each range that correspond to our target
 | 0x70-0x77 | 0b01*110*000-0b01*110*111 | Bit 6      |
 | 0x78-0x7F | 0b01*111*000-0b01*111*111 | Bit 7      |
 
+One last thing to note, we have finally hit the edge case with the number of returned cycles. For most 0xCB instructions, accessing the contents of the address pointed to by `HL` requires four cycles to complete, while simply reading the contents of an 8-bit register takes two. This is not quite the case of the `BIT` instructions, which still takes only two cycles for most registers, but three cycles for the `(HL)` variants. We will need to modify our `ret` value for this one situation.
+
 ```rust
 // In cpu/opcodes.rs
 
@@ -391,6 +398,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
     // 0xC0-0xFF -> SET
 
     let cb_reg = get_cb_reg(op);
+    let mut ret = if cb_reg == Regs::HL { 4 } else { 2 };
     match op {
         0x00..=0x07 => { cpu.rotate_left(cb_reg, false); },
         0x08..=0x0F => { cpu.rotate_right(cb_reg, false); },
@@ -403,6 +411,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
         0x40..=0x7F => {
             let bit = (op & 0b111000) >> 3;
             cpu.test_bit(cb_reg, bit);
+            if cb_reg == Regs::HL { ret = 3; }
         },
         0x80..=0xBF => {
             let bit = (op & 0b111000) >> 3;
@@ -413,7 +422,7 @@ fn execute_cb(cpu: &mut Cpu, op: u8) -> u8 {
             cpu.write_bit(cb_reg, bit, true);
         },
     }
-    2
+    ret
 }
 ```
 
