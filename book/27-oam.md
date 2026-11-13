@@ -119,7 +119,7 @@ impl Sprite {
 }
 ```
 
-As stated above, byte 0 corresponds to the Y coordinate, byte 1 to the X coordinate, and byte 2 to the tile index. Byte 3 has three assigned bits for an original Game Boy, and we will completely ignore the others. Finally, we'll add some getter functions to access each of the stored fields. We don't need any setter functions since that will always happen in `write_u8`.
+As stated above, byte 0 corresponds to the Y coordinate, byte 1 to the X coordinate, and byte 2 to the tile index. Byte 3 has four assigned bits for an original Game Boy, and we will completely ignore the others. Finally, we'll add some getter functions to access each of the stored fields. We don't need any setter functions since that will always happen in `write_u8`.
 
 ```rust
 // In ppu/sprite.rs

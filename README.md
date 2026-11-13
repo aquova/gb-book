@@ -29,7 +29,7 @@ Other tools aren't required but will greatly assist with debugging. It's recomme
 1. [CPU - Opcode Setup](book/05-opcode-setup.md)
 1. [CPU - Increment/Decrement Instructions](book/06-increment-decrement.md)
 1. [CPU - Load Instructions](book/07-load-instructions.md)
-1. [CPU - Bitwise Instructions](book/08-bitwise-instructions.md)
+1. [CPU - Basic Instructions](book/08-basic-instructions.md)
 1. [CPU - The Stack](book/09-stack.md)
 1. [CPU - 0xCB Prefix](book/10-cb-prefix.md)
 1. [CPU - Final Misc. Instructions](book/11-final-misc.md)

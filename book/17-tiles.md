@@ -184,10 +184,10 @@ Each row of pixels is stored in two bytes, with all of the low bits in the first
 
 [Source - GBEDG](https://hacktix.github.io/GBEDG/ppu/#pixel-data)
 
-To make matters even worse, the bits are stored in the opposite direction as the pixels. The left most pixel corresponds to the least significant (right-most) bit, and vice versa. This means that when we're accessing the tile data, we'll have to modify the index to flip things around, or else every tile in the game would be mirrored left to right. It's a bit of an unintuitive system the first time you see it, but the implementation is pretty straight-forward.
+To make matters even worse, the bits are stored in the opposite direction as the pixels. The left most pixel corresponds to the most significant (left-most) bit, and vice versa. This means that when we're accessing the tile data, we'll have to modify the index to flip things around, or else every tile in the game would be mirrored left to right. It's a bit of an unintuitive system the first time you see it, but the implementation is pretty straight-forward.
 
 ```rust
-// In ppu/tile.
+// In ppu/tile.rs
 
 impl Tile {
     // Unchanged code omitted
@@ -286,6 +286,6 @@ impl Ppu {
 }
 ```
 
-Both read and write perform the same calculations, only calling a different function inside of the `Tile` object. Since the functions are given an absolute memory address, we first need to subtract the start of our block, then divide by the size of each tile in bytes, 16, which since it's `u16` division will round to the nearest whole value. These are the indices for the tiles, which we can use in our `tiles` array. We then need to get the remainder to know which section of pixels we're interested in. This is now enough to specify the exact `Tile` and pixels we want to access.
+Both read and write perform the same calculations, only calling a different function inside of the `Tile` object. Since the functions are given an absolute memory address, we first need to subtract the start of our block, then divide by the size of each tile in bytes, 16, which since it's `u16` division will floor to the nearest whole value. These are the indices for the tiles, which we can use in our `tiles` array. We then need to get the remainder to know which section of pixels we're interested in. This is now enough to specify the exact `Tile` and pixels we want to access.
 
 [*Next Chapter*](18-tile-maps.md)

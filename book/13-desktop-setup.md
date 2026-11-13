@@ -37,7 +37,7 @@ const pub SCREEN_WIDTH: usize = 160;
 const pub SCREEN_HEIGHT: usize = 144;
 ```
 
-If you recall from the initial Game Boy specifications discussion, a Game Boy screen is 160 pixels tall by 144 pixels wide. Since both `wasm` and `desktop` will need to know this, we'll store it as a common constant in our utility file.
+If you recall from the initial Game Boy specifications discussion, a Game Boy screen is 160 pixels wide by 144 pixels tall. Since both `wasm` and `desktop` will need to know this, we'll store it as a common constant in our utility file.
 
 Back in `desktop/src/main.rs`, we'll read these values in. If you're familiar with even the basics of computer graphics, you'll note that 160x144 is an *incredibly* small resolution, especially these days. My current monitor is a standard HD resolution, 1920x1080, which is a very common resolution these days. 160x144 is comically small on that sort of monitor, so we'll scale it up to be easier to play on. Personally, I think a scale factor of 3x is pretty reasonable, meaning that every pixel on an original Game Boy screen will be displayed as a 3x3 block of pixels on our monitors. You're welcome to modify this value to your taste, or even create some sort of customizable feature for the user, although we won't cover that here.
 

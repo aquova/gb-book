@@ -32,7 +32,7 @@ Actually writing to VRAM is nothing special; the CPU can write data to it the sa
 
 ## Tiles and Sprites
 
-With the purpose of the VRAM established, we now need to examine how it is structured. As we said, VRAM occupies the memory space from 0x8000 to 0x9FFF, a total of 8 KiB of memory. We also said that the Game Boy screen measures 160 by 144 pixels, or 23,040 pixels in total. If each pixel color only takes two bits to store, then that means we would need 5670 bytes to store a frame's worth of pixel data. Perfect, we have plenty left over!
+With the purpose of the VRAM established, we now need to examine how it is structured. As we said, VRAM occupies the memory space from 0x8000 to 0x9FFF, a total of 8 KiB of memory. We also said that the Game Boy screen measures 160 by 144 pixels, or 23,040 pixels in total. If each pixel color only takes two bits to store, then that means we would need 5760 bytes to store a frame's worth of pixel data. Perfect, we have plenty left over!
 Alas, the Game Boy does not simply save a "framebuffer" of pixel data in this fashion, as it is inefficient for several reasons. Firstly, many games have a lot of repeated sections displayed on screen. Rather than waste data saying the sky is mostly white, it would be helpful to reuse the same graphic many times, almost like copy and pasting. Secondly, anytime we need to update the screen, such as when the player moves, we would have to track what pixels should display the player, what should display the background, or we'd have to recopy an entire frame's worth of data. While modern hardware is capable of these strategies, the Game Boy was not. Fortunately, the designers of the system had a clever solution.
 
 ![Diagram showing the pixel values of a sprite](img/16-sprite-index.svg)
@@ -55,7 +55,7 @@ The second image is the map. The map is a grid of 20 indices by 18 which specifi
 
 The "map" specifies which tile should be loaded where
 
-The third image is the combination of the tiles into the map to construct the background of the frame. Each of the tiles were "pasted in" one by one, completing the puzzle. Hopefully you can see how this method, if a bit complicated, can save a lot of memory space. As we said before, saving color data for every pixel would require 5670 bytes. With this method, we only 4096 bytes for the tiles (256 tiles at 16 bytes each) and just 360 bytes for the entire map. This is just over half of the available VRAM space, enough for us to do some neat things with the rest... but we'll come to that in a moment.
+The third image is the combination of the tiles into the map to construct the background of the frame. Each of the tiles were "pasted in" one by one, completing the puzzle. Hopefully you can see how this method, if a bit complicated, can save a lot of memory space. As we said before, saving color data for every pixel would require 5760 bytes. With this method, we only 4096 bytes for the tiles (256 tiles at 16 bytes each) and just 360 bytes for the entire map. This is just over half of the available VRAM space, enough for us to do some neat things with the rest... but we'll come to that in a moment.
 
 ![The background layer of Super Mario Land](img/16-game.png)
 
