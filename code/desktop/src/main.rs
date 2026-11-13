@@ -18,10 +18,13 @@ use std::fs::{File, OpenOptions};
 use std::io::prelude::*;
 use std::io::Read;
 use std::process::exit;
+use std::thread::sleep;
+use std::time::{Duration, Instant};
 
 const SCALE: u32 = 3;
 const WINDOW_WIDTH: u32 = (SCREEN_WIDTH as u32) * SCALE;
 const WINDOW_HEIGHT: u32 = (SCREEN_HEIGHT as u32) * SCALE;
+const FPS: f64 = 60.0;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -40,13 +43,14 @@ fn main() {
 
     let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
-    let window = video_subsystem.window(title, WINDOW_WIDTH, WINDOW_HEIGHT)
-        .position_centered().opengl().build().unwrap();
+    let window = video_subsystem.window(title, WINDOW_WIDTH, WINDOW_HEIGHT).position_centered().opengl().build().unwrap();
     let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 
     let mut events = sdl_context.event_pump().unwrap();
+    let frame_delay = Duration::from_secs_f64(1.0 / FPS);
+    let mut next_frame = Instant::now();
     'gameloop: loop {
         for event in events.poll_iter() {
             match event {
@@ -75,6 +79,14 @@ fn main() {
         tick_until_draw(&mut gb, &mut gbd, filename);
         let frame = gb.render();
         draw_screen(&frame, &mut canvas);
+
+        let now = Instant::now();
+        if now < next_frame {
+            next_frame += frame_delay;
+            sleep(next_frame - now);
+        } else {
+            next_frame = now;
+        }
     }
 }
 

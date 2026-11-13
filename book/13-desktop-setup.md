@@ -127,7 +127,11 @@ fn main() {
 
 This new code utilizes the SDL "event pump", which maintains a list of events that happen to the window. Each iteration of the loop, we cycle through those events, breaking the main infinite gameplay loop if we detect a "Quit" event (which occurs if the close window X button was clicked) or if the Escape key was pressed. Run the program again, and you should see that both of these actions do in fact close the application window. If you prefer a different key to close the window, feel free to change it. A complete list of SDL keycode values can be found [here](https://docs.rs/sdl3/latest/sdl3/keyboard/enum.Keycode.html)
 
-This has not fixed the 100% CPU utilization however. Once we start actually running the emulator, we'll deal with the timings of things, but for now let's add a temporary `sleep` statement, just so we aren't spinning up all the fans each time we need to run a test. We'll use a 100 ms sleep time, which will reduce the CPU usage levels dramatically.
+## Sleeping
+
+This has not fixed the 100% CPU utilization however. The issue is that our emulator is being told to run at full blast as quickly as it possibly can. This not only will cause undue stress on the computer of whoever is using our emulator, but it means that the emulator will run differently on different computers, and almost certainly much more quickly than a Game Boy should run.
+
+One thing at a time though. Let's add a temporary `sleep` statement, just so we aren't spinning up all the fans each time we need to run a test. We'll use a 100 ms sleep time, which will reduce the CPU usage levels dramatically.
 
 ```rust
 // In desktop/src/mod.rs
@@ -165,6 +169,93 @@ fn main() {
     }
 }
 ```
+
+That should prevent the emulator from maxing out your CPU, but sleeping for an arbitrary 100 ms is not accurate to how a real Game Boy display behaves. The Game Boy renders at 60 FPS (more or less), so we need to figure out how to sleep for the precise amount of time such that the emulation code runs exactly sixty times per second. A simple solution would just be to sleep for 1/60 seconds (~16.667ms) each loop.
+
+```rust
+// In desktop/src/mod.rs
+
+use std::thread::sleep;
+use std::time::{Duration};
+
+const FPS: f64 = 60.0;
+
+// Unchanged code omitted
+
+fn main() {
+    let sdl_context = sdl3::init().unwrap();
+    let video_subsystem = sdl_context.video().unwrap();
+    let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
+        .position_centered().opengl().build().unwrap();
+    let mut canvas = window.into_canvas();
+    canvas.clear();
+    canvas.present();
+
+    let mut events = sdl_context.event_pump().unwrap();
+    let frame_delay = Duration::from_secs_f64(1.0 / FPS);
+    'gameloop: loop {
+        for event in events.poll_iter() {
+            match event {
+                Event::Quit{..} |
+                Event::KeyDown{keycode: Some(Keycode::Escape), ..} => {
+                    break 'gameloop;
+                },
+                _ => {}
+            }
+        }
+
+        sleep(frame_delay);
+    }
+}
+```
+
+That gets us much closer. However, this would assume that all of the event polling, emulation, and drawing to the screen (which we aren't yet doing) happens in literally no time at all. This doesn't seem terribly realistic. Instead, we should measure how long it takes to do all of those things, and then sleep for whatever time is remaining.
+
+```rust
+// In desktop/src/mod.rs
+
+use std::thread::sleep;
+use std::time::{Duration, Instant};
+
+const FPS: f64 = 60.0;
+
+// Unchanged code omitted
+
+fn main() {
+    let sdl_context = sdl3::init().unwrap();
+    let video_subsystem = sdl_context.video().unwrap();
+    let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
+        .position_centered().opengl().build().unwrap();
+    let mut canvas = window.into_canvas();
+    canvas.clear();
+    canvas.present();
+
+    let mut events = sdl_context.event_pump().unwrap();
+    let frame_delay = Duration::from_secs_f64(1.0 / FPS);
+    let mut next_frame = Instant::now();
+    'gameloop: loop {
+        for event in events.poll_iter() {
+            match event {
+                Event::Quit{..} |
+                Event::KeyDown{keycode: Some(Keycode::Escape), ..} => {
+                    break 'gameloop;
+                },
+                _ => {}
+            }
+        }
+
+        let now = Instant::now();
+        if now < next_frame {
+            next_frame += frame_delay;
+            sleep(next_frame - now);
+        } else {
+            next_frame = now;
+        }
+    }
+}
+```
+
+This new sleep code has two different conditions. Firstly, if we finished quicker than our allotted time, we sleep for the remainder. If we took too long though, we move the start time for the next frame, meaning we would try and sleep a little less to make up the lost time. This, ideally, will give us an average of 60 FPS (unless you're on a very poor machine, in which case there isn't much hope for it).
 
 ## Reading in a File
 

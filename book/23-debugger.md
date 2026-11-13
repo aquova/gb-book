@@ -684,6 +684,14 @@ fn main() {
         tick_until_draw(&mut gb, &mut gbd);
         let frame = gb.render();
         draw_screen(&frame, &mut canvas);
+
+        let now = Instant::now();
+        if now < next_frame {
+            next_frame += frame_delay;
+            sleep(next_frame - now);
+        } else {
+            next_frame = now;
+        }
     }
 }
 

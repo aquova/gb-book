@@ -279,11 +279,19 @@ fn main() {
         while !gb.tick() {}
         let frame = gb.render();
         draw_screen(&frame, &mut canvas);
+
+        let now = Instant::now();
+        if now < next_frame {
+            next_frame += frame_delay;
+            sleep(next_frame - now);
+        } else {
+            next_frame = now;
+        }
     }
 }
 ```
 
-The event polling is still the same, but now we let the `tick` function do its thing as many times as it needs to until it finally returns a true value, indicating that VBlank has begun and a frame needs to be rendered. We then call the `render` function, which gives us a frame buffer containing four RGBA values for each of the 160x144 pixels. That data is passed into a new `draw_screen` along with the `canvas` variable, which will do the rendering.
+The event polling is still the same, but now we let the `tick` function do its thing as many times as it needs to until it finally returns a true value, indicating that VBlank has begun and a frame needs to be rendered. We then call the `render` function, which gives us a frame buffer containing four RGBA values for each of the 160x144 pixels. That data is passed into a new `draw_screen` along with the `canvas` variable, which will do the rendering. Lastly, we sleep for 100 ms to avoid maxing out the CPU. We'll need to adjust that too, to correctly hit the same 60 FPS that a real system does.
 
 `draw_screen` is pretty straight-forward. It goes through pixel by pixel, setting the active draw color to the RGBA values stored in the array. It then draws a rect of size `SCALE` in the right position, and when everything is finished, displays the completed canvas.
 
