@@ -181,7 +181,7 @@ fn add_e8(cpu: &mut Cpu) -> u8 {
 }
 ```
 
-This function strongly resemebles `add_r16`, but rather than reading from a source register, the system will first fetch a value. This value needs to be treated as a signed value (and then cast into a `u16` so the Rust compiler will allow addition with other `u16`). This is the only exception however, and once you have all of the bitwise operations in place, the new updated `OPCODES` array should look something like this.
+This function strongly resembles `add_r16`, but rather than reading from a source register, the system will first fetch a value. This value needs to be treated as a signed value (and then cast into a `u16` so the Rust compiler will allow addition with other `u16`). This is the only exception however, and once you have all of the bitwise operations in place, the new updated `OPCODES` array should look something like this.
 
 ```rust
 const OPCODES: [fn(&mut Cpu) -> u8; 256] = [
