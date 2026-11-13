@@ -193,7 +193,7 @@ impl Tile {
     // Unchanged code omitted
 
     pub fn read_u8(&self, offset: u16) -> u8 {
-        if offset > 16 {
+        if offset > 15 {
             panic!("Offset too large to fit in this tile");
         }
         let row = (offset / 2) as usize;
@@ -207,7 +207,7 @@ impl Tile {
     }
 
     pub fn write_u8(&mut self, offset: u16, val: u8) {
-        if offset > 16 {
+        if offset > 15 {
             panic!("Offset too large to fit in this tile");
         }
         let row = (offset / 2) as usize;
