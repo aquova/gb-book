@@ -6,21 +6,23 @@
 
 We've spent our entire time thus far working on the emulator `core`, setting up the CPU and now the initial memory bus. In order to use them, we need to turn our attention back to our frontends. They need the ability to read our game ROM file into the core, so that the emulation process has something to execute. If you recall, alongside the `core` we created two other modules -- `desktop` for our SDL-based desktop frontend, and `wasm` for our WebAssembly-based web frontend. This chapter we will set up the basic structure of `desktop`, including creating an empty window and reading in a file, then repeat the same steps in the next chapter for `wasm`.
 
-Navigate to the `desktop` folder, and again open its `Cargo.toml` configuration file. We have already pointed the frontend to the `gb_core` backend module, but there is a 3rd party Rust library we will rely upon, the `sdl2` module. If you aren't familiar with SDL, it is a cross-platform video library which makes it easy to create a window and render graphics upon it (you will need to [install](https://wiki.libsdl.org/SDL2/Installation) the SDL library on your machine if you haven't yet). You likely have used SDL-based software many times in your life, as it is an incredibly widely used library. We will use it here to display our window, render our game, and handle keyboard inputs, with no changes required to run the software on different operating systems. More advanced UI, like having a file selector window, or menu options, won't be covered by this tutorial; our final emulator will display the game and nothing else.
+Navigate to the `desktop` folder, and again open its `Cargo.toml` configuration file. We have already pointed the frontend to the `gb_core` backend module, but there is a 3rd party Rust library we will rely upon, the `sdl3` module. If you aren't familiar with SDL, it is a cross-platform video library which makes it easy to create a window and render graphics upon it (you will need to [install](https://github.com/libsdl-org/SDL/blob/main/INSTALL.md) the SDL library on your machine if you haven't yet). You likely have used SDL-based software many times in your life, as it is an incredibly widely used library. We will use it here to display our window, render our game, and handle keyboard inputs, with no changes required to run the software on different operating systems. More advanced UI, like having a file selector window, or menu options, won't be covered by this tutorial; our final emulator will display the game and nothing else.
 
-Inside of `Cargo.toml`, add an entry for the `sdl2` package, which at the time of writing is on version 0.36.0 (check https://crates.io/crates/sdl2 for the most recent library version during your time<sup>1</sup>). This package provides the interface between our Rust code and the SDL library, which is written in C. If you're interested, writing your own SDL wrapper is a good example to learn how interoperability between programming languages works, but we'll save that as an exercise for another time and use the standardized implementation.
+Inside of `Cargo.toml`, add an entry for the `sdl3` package, which at the time of writing is on version 0.22.1 (check https://crates.io/crates/sdl3 for the most recent library version). This package provides the interface between our Rust code and the SDL library, which is written in C. If you're interested, writing your own SDL wrapper is a good example to learn how interoperability between programming languages works, but we'll save that as an exercise for another time and use the standardized implementation.
 
 ```toml
 # In desktop/Cargo.toml
 
 [dependencies]
 gb_core = { path = "../core" }
-sdl2 = "0.36.0"
+sdl3 = "0.22.1"
 ```
 
-We can now access the `sdl2` crate inside our `desktop` project. Our frontend is going to be rather simplistic, and entirely live inside of `src/main.rs`. Feel free to delete the pre-generated code so that we have only an empty `main()` function to work with.
+We can now access the `sdl3` crate inside our `desktop` project. Our frontend is going to be rather simplistic, and entirely live inside of `src/main.rs`. Feel free to delete the pre-generated code so that we have only an empty `main()` function to work with.
 
-<sup>1</sup>It took me so long to finish this tutorial that SDL3 finally came out... We'll continue with SDL2.
+### Note for SDL2 users
+
+If you started following along with this guide prior to 2026, you'll notice that it used to use SDL2, not 3. Now that it is released, SDL3 has become widely adopted and is replacing SDL2 in many applications. My own Linux distribution migrated over to an SDL2 compatibility layer, which caused bugs with the version of the Rust SDL2 library this guide was using. Since I had to upgrade anyway, I decided to migrate this tutorial to SDL3 entirely. For the features we're using, if you want to switch between SDL2 and SDL3, it's pretty much just a matter of renaming the appropriate variables in the code.
 
 ## SDL Window Basics
 
@@ -59,17 +61,17 @@ In addition to creating the `WINDOW_WIDTH` and `WINDOW_HEIGHT` variables, which 
 // Unchanged code omitted
 
 fn main() {
-    let sdl_context = sdl2::init().unwrap();
+    let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
     let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
         .position_centered().opengl().build().unwrap();
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
+    let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 }
 ```
 
-This section of code first initializes the SDL2 library, saving it in the `sdl_context` variable. We then grab access to the video functionality and use it to create a new desktop window using the width and height we defined earlier, as well as giving it a cheesy name (feel free to change that text to whatever you like). As part of the construction, it's also set to be centered on the user's desktop window, which is a nice touch. We then grab the `canvas` of our new window, which will be the surface that the game is rendered upon. The `canvas` has a number of helpful functions to draw shapes and textures, but for now we will simply clear it. Go ahead and compile and run this code with the `cargo run` command (make sure you're in the `desktop` directory first) and assuming there are no mistakes you'll notice an application window appear... and quickly disappear. We created an SDL window, but once the `main` function concludes it is destroyed as the program ends. We can solve this by creating an infinite loop following the initialization of the SDL window, which will become the basis of our gameplay loop. Note that the code we have now needs to only run once, and should go *before* the loop begins.
+This section of code first initializes the SDL3 library, saving it in the `sdl_context` variable. We then grab access to the video functionality and use it to create a new desktop window using the width and height we defined earlier, as well as giving it a cheesy name (feel free to change that text to whatever you like). As part of the construction, it's also set to be centered on the user's desktop window, which is a nice touch. We then grab the `canvas` of our new window, which will be the surface that the game is rendered upon. The `canvas` has a number of helpful functions to draw shapes and textures, but for now we will simply clear it. Go ahead and compile and run this code with the `cargo run` command (make sure you're in the `desktop` directory first) and assuming there are no mistakes you'll notice an application window appear... and quickly disappear. We created an SDL window, but once the `main` function concludes it is destroyed as the program ends. We can solve this by creating an infinite loop following the initialization of the SDL window, which will become the basis of our gameplay loop. Note that the code we have now needs to only run once, and should go *before* the loop begins.
 
 ```rust
 // In desktop/src/mod.rs
@@ -77,11 +79,11 @@ This section of code first initializes the SDL2 library, saving it in the `sdl_c
 // Unchanged code omitted
 
 fn main() {
-    let sdl_context = sdl2::init().unwrap();
+    let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
     let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
         .position_centered().opengl().build().unwrap();
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
+    let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 
@@ -94,17 +96,17 @@ When you run it again you should notice three things. Firstly, our window remain
 ```rust
 // In desktop/src/mod.rs
 
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
+use sdl3::event::Event;
+use sdl3::keyboard::Keycode;
 
 // Unchanged code omitted
 
 fn main() {
-    let sdl_context = sdl2::init().unwrap();
+    let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
     let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
         .position_centered().opengl().build().unwrap();
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
+    let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 
@@ -123,15 +125,15 @@ fn main() {
 }
 ```
 
-This new code utilizes the SDL "event pump", which maintains a list of events that happen to the window. Each iteration of the loop, we cycle through those events, breaking the main infinite gameplay loop if we detect a "Quit" event (which occurs if the close window X button was clicked) or if the Escape key was pressed. Run the program again, and you should see that both of these actions do in fact close the application window. If you prefer a different key to close the window, feel free to change it. A complete list of SDL keycode values can be found [here](https://rust-sdl2.github.io/rust-sdl2/sdl2/keyboard/enum.Keycode.html)
+This new code utilizes the SDL "event pump", which maintains a list of events that happen to the window. Each iteration of the loop, we cycle through those events, breaking the main infinite gameplay loop if we detect a "Quit" event (which occurs if the close window X button was clicked) or if the Escape key was pressed. Run the program again, and you should see that both of these actions do in fact close the application window. If you prefer a different key to close the window, feel free to change it. A complete list of SDL keycode values can be found [here](https://docs.rs/sdl3/latest/sdl3/keyboard/enum.Keycode.html)
 
 This has not fixed the 100% CPU utilization however. Once we start actually running the emulator, we'll deal with the timings of things, but for now let's add a temporary `sleep` statement, just so we aren't spinning up all the fans each time we need to run a test. We'll use a 100 ms sleep time, which will reduce the CPU usage levels dramatically.
 
 ```rust
 // In desktop/src/mod.rs
 
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
+use sdl3::event::Event;
+use sdl3::keyboard::Keycode;
 
 use std::thread::sleep;
 use std::time::Duration;
@@ -139,11 +141,11 @@ use std::time::Duration;
 // Unchanged code omitted
 
 fn main() {
-    let sdl_context = sdl2::init().unwrap();
+    let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
     let window = video_subsystem.window("My Game Boy Emulator", WINDOW_WIDTH, WINDOW_HEIGHT)
         .position_centered().opengl().build().unwrap();
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
+    let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 

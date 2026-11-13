@@ -6,12 +6,12 @@ use gb_core::cpu::Cpu;
 use gb_core::io::Buttons;
 use gb_core::utils::{SCREEN_HEIGHT, SCREEN_WIDTH, DISPLAY_BUFFER};
 
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
-use sdl2::pixels::Color;
-use sdl2::rect::Rect;
-use sdl2::render::Canvas;
-use sdl2::video::Window;
+use sdl3::event::Event;
+use sdl3::keyboard::Keycode;
+use sdl3::pixels::Color;
+use sdl3::rect::Rect;
+use sdl3::render::Canvas;
+use sdl3::video::Window;
 
 use std::env;
 use std::fs::{File, OpenOptions};
@@ -38,11 +38,11 @@ fn main() {
     load_battery_save(&mut gb, filename);
     let title = gb.get_title();
 
-    let sdl_context = sdl2::init().unwrap();
+    let sdl_context = sdl3::init().unwrap();
     let video_subsystem = sdl_context.video().unwrap();
     let window = video_subsystem.window(title, WINDOW_WIDTH, WINDOW_HEIGHT)
         .position_centered().opengl().build().unwrap();
-    let mut canvas = window.into_canvas().present_vsync().build().unwrap();
+    let mut canvas = window.into_canvas();
     canvas.clear();
     canvas.present();
 

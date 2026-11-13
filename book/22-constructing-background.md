@@ -257,7 +257,7 @@ impl Cpu {
 
 ### Desktop Frontend
 
-This is everything the `core` needs to do to prepare a (rudimentary) frame to display. At this point, we need to go back to both of our frontends and hook up both `tick` and `render`, as well as write the actual image rendering code. We'll begin with the `desktop`. The `desktop` is actually pretty straight-forward. We will run the `tick` function continuously until it signals it has a frame ready, then go pixel by pixel drawing rectangles (remember we scaled the desktop window up, single pixels will be displayed as filled rectangles) in their proper locations. This will replace the `sleep` call, as SDL's vsync will take care of the timing for us (more on that in a moment).
+This is everything the `core` needs to do to prepare a (rudimentary) frame to display. At this point, we need to go back to both of our frontends and hook up both `tick` and `render`, as well as write the actual image rendering code. We'll begin with the `desktop`. The `desktop` is actually pretty straight-forward. We will run the `tick` function continuously until it signals it has a frame ready, then go pixel by pixel drawing rectangles (remember we scaled the desktop window up, single pixels will be displayed as filled rectangles) in their proper locations.
 
 ```rust
 // In desktop/src/main.rs

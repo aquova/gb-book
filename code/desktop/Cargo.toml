@@ -1,8 +1,8 @@
 [package]
 name = "desktop"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]
 gb_core = { path = "../core" }
-sdl2 = "0.36.0"
+sdl3 = "0.22.1"
